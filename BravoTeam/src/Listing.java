@@ -1,4 +1,207 @@
+/**
+ * 
+ * @author hkumte
+ * Bravo Team
+ * 10/17/20
+ *
+ */
+import java.util.ArrayList;
 
 public class Listing {
+	private String address;
+	private int numBeds;
+	private double numBaths;
+	private int squareFootage;
+	private ArrayList<String> amenities;
+	private int rentCost;
+	private boolean utilitiesIncluded;
+	private String leaseDuration;
+	private boolean canSublet;
+	private int distanceFromCampus;
+	private boolean isHandicapAccessible;
+	
+	public  Listing(String address, int numBeds, double numBaths, int squareFootage, ArrayList<String> amenities, int rentCost, boolean utilitiesIncluded, String leaseDuration, boolean canSublet, int distanceFromCampus, boolean isHandicapAccessible) {
+		this.address = address;
+		this.numBaths = numBaths;
+		this.numBeds = numBeds;
+		this.squareFootage = squareFootage;
+		this.amenities = amenities;
+		this.rentCost = rentCost;
+		this.utilitiesIncluded = utilitiesIncluded;
+		this.leaseDuration = leaseDuration;
+		this.canSublet = canSublet;
+		this.distanceFromCampus = distanceFromCampus;
+		this.isHandicapAccessible = isHandicapAccessible;
+	}
+	
+	/*
+	 * General methods
+	 */
+	
+	/**
+	 * Gets the String address of the listing
+	 * @return String address
+	 */
+	public String getAddress() {
+		return address;
+	}
+	
+	/**
+	 * Sets the address for the listing
+	 * @param address is the listing's address
+	 */
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	
+	/**
+	 * Gets the int number of beds of the listing
+	 * @return number of beds
+	 */
+	public int getNumBeds() {
+		return numBeds;
+	}
+	
+	/**
+	 * Sets the number of beds of the listing
+	 * @param numBeds is the number of beds in the listing
+	 */
+	public void setNumBeds(int numBeds) {
+		this.numBeds = numBeds;
+	}
+	
+	/**
+	 * Gets the double number of baths of the listiing
+	 * @return the number of baths
+	 */
+	public double getNumBaths() {
+		return numBaths;
+	}
+	
+	/**
+	 * Sets the number of baths for the listing
+	 * @param numBaths the number of baths
+	 */
+	public void setNumBaths(double numBaths) {
+		this.numBaths = numBaths;
+	}
+	
+	/**
+	 * Gets the int square feet of the listing
+	 * @return square feet
+	 */
+	public int getSquareFootage() {
+		return squareFootage;
+	}
+	
+	/**
+	 * Sets the square feet of the listing
+	 * @param squareFootage of the listing
+	 */
+	public void setSquareFootage(int squareFootage) {
+		this.squareFootage = squareFootage;
+	}
+	
+	/**
+	 * Gets the array list of amenities
+	 * @return amenities of the listing
+	 */
+	public ArrayList<String> getAmenities() {
+		return amenities;
+	}
+	
+	/**
+	 * Sets the array list of amenities for the listing
+	 * @param amenities of the listing
+	 */
+	public void setAmenities(ArrayList<String> amenities) {
+		this.amenities = amenities;
+	}
+	
+	/**
+	 * Gets the cost of rent for the listing
+	 * @return rent cost
+	 */
+	public int getRentCost() {
+		return rentCost;
+	}
+	
+	/**
+	 * Sets the cost of rent for the listing
+	 * @param rentCost of the listing
+	 */
+	public void setRentCost(int rentCost) {
+		this.rentCost = rentCost;
+	}
+	
+	/**
+	 * Gets whether utilities are included for the listing
+	 * @return boolean whether utilities are included
+	 */
+	public boolean isUtilitiesIncluded() {
+		return utilitiesIncluded;
+	}
+	
+	/**
+	 * sets whether utilities are included of the listing
+	 * @param bool is utilities included for listing
+	 */
+	public void setUtilitiesIncluded(boolean bool)
+	{
+		this.utilitiesIncluded = bool;
+	}
+	
+	/**
+	 * Gets the lease duration of the listing
+	 * @return the lease duration 
+	 */
+	public String getLeaseDuration() {
+		return leaseDuration;
+	}
+	
+	/**
+	 * Sets the lease duration of the listing
+	 * @param leaseDuration of the listing
+	 */
+	public void setLeaseDuration(String leaseDuration) {
+		this.leaseDuration = leaseDuration;
+	}
+	
+	/**
+	 * Gets whether the listing can be sublet
+	 * @return boolean of listing's sublet status
+	 */
+	public boolean isCanSublet() {
+		return canSublet;
+	}
+	
+	/**
+	 * Sets whether the lease can be sublet
+	 * @param bool whether the lease can be sublet
+	 */
+	public void setCanSublet(boolean bool) {
+		this.canSublet = bool;
+	}
+	
+	/**
+	 * Gets the distance from campus for the listing
+	 * @return the distance from campus
+	 */
+	public int getDistanceFromCampus() {
+		return distanceFromCampus;
+	}
+	
+	/**
+	 * Sets the distance from campus for the listing
+	 * @param distanceFromCampus for the listing
+	 */
+	public void setDistanceFromCampus(int distanceFromCampus) {
+		this.distanceFromCampus = distanceFromCampus;
+	}
+	
+	
+	
+	
+
 
 }
