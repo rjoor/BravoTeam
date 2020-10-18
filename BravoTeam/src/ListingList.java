@@ -35,5 +35,4 @@ public class ListingList {
 		//TODO write the logic
 		return null;
 	}
-
 }
