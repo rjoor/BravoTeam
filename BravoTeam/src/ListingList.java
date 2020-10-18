@@ -18,6 +18,7 @@ public class ListingList {
 	/**
 	 * getInstance creates the single instance of the arrayList of 
 	 * listings in the Bravo System.
+	 * 
 	 * @return listingList an arrayList of type Listing
 	 */
 	public static ListingList getInstance() {
@@ -28,6 +29,7 @@ public class ListingList {
 	/**
 	 * getListing searches the arrayList for the listing that matches 
 	 * the address passed as the argument.
+	 * 
 	 * @param address a string representation of the listing's address
 	 * @return Listing a class of the type Listing
 	 */
