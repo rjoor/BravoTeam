@@ -1,0 +1,11 @@
+{"student":[
+  {
+	"firstName":"Barry"
+  	"lastName":"Savage"
+	"isGuest": false
+	"rating":5
+	"studentid":001
+	"favoritesListings":"barryFavorites"
+	"isUSCStudent": true
+  }
+]}
