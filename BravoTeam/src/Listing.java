@@ -6,19 +6,19 @@
 import java.util.ArrayList;
 
 public class Listing {
-  private String address;
-  private int numBeds;
-  private double numBaths;
-  private int squareFootage;
-  private ArrayList<String> amenities;
-  private int rentCost;
-  private boolean utilitiesIncluded;
-  private String leaseDuration;
-  private boolean canSublet;
-  private int distanceFromCampus;
-  private boolean isHandicapAccessible;
-  private int id;
-  private Type type;
+  protected String address;
+  protected int numBeds;
+  protected double numBaths;
+  protected int squareFootage;
+  protected ArrayList<String> amenities;
+  protected int rentCost;
+  protected boolean utilitiesIncluded;
+  protected String leaseDuration;
+  protected boolean canSublet;
+  protected int distanceFromCampus;
+  protected boolean isHandicapAccessible;
+  protected int id;
+  protected Type type;
 
   public Listing(String address, int numBeds, double numBaths, int squareFootage,
       ArrayList<String> amenities, int rentCost, boolean utilitiesIncluded, String leaseDuration,
