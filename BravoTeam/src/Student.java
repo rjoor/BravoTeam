@@ -41,6 +41,5 @@ public class Student extends User {
     } else {
       return false;
     }
-
   }
 }

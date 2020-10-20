@@ -1,6 +1,10 @@
 /**
+ * User class contains all the attributes that make up a base user in the
+ * Bravo System.
  * 
- * @author Vince Kolb-Lugo Bravo Team 2020-10-16
+ * @author Vince Kolb-Lugo 
+ * Bravo Team 
+ * 2020-10-16
  *
  */
 public class User {

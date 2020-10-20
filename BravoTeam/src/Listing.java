@@ -18,10 +18,11 @@ public class Listing {
   private int distanceFromCampus;
   private boolean isHandicapAccessible;
   private int id;
+  private Type type;
 
   public Listing(String address, int numBeds, double numBaths, int squareFootage,
       ArrayList<String> amenities, int rentCost, boolean utilitiesIncluded, String leaseDuration,
-      boolean canSublet, int distanceFromCampus, boolean isHandicapAccessible, int id) {
+      boolean canSublet, int distanceFromCampus, boolean isHandicapAccessible, int id, Type type) {
     this.address = address;
     this.numBaths = numBaths;
     this.numBeds = numBeds;
@@ -34,6 +35,7 @@ public class Listing {
     this.distanceFromCampus = distanceFromCampus;
     this.isHandicapAccessible = isHandicapAccessible;
     this.id = id;
+    this.type = type;
   }
 
   /*
@@ -219,7 +221,22 @@ public class Listing {
   public void setDistanceFromCampus(int distanceFromCampus) {
     this.distanceFromCampus = distanceFromCampus;
   }
-
-
-
+  
+  /**
+   * Gets the type value. Maybe an unnecessary method
+   * 
+   * @return type an enum of the type of residence
+   */
+  public Type getType() {
+	  return type;
+  }
+  
+  /**
+   * setType sets the value of Type
+   * 
+   * @param type an enumerated type of residence
+   */
+  public void setType(Type type) {
+	  this.type = type;
+  }
 }
