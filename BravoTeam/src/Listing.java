@@ -1,5 +1,5 @@
 /**
- * 
+ * Listing class contains all of the different features and properties of a listing, as well as the functions to add to a listing.
  * @author hkumte Bravo Team 10/17/20
  *
  */

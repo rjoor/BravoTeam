@@ -1,5 +1,6 @@
 /**
- * 
+ * Keeps track of the landlord for each listing in the database. The class contains all of 
+ * functionality available to the landlord as well as keeping up with the properties managed by the landlord.
  * @author hkumte Bravo Team 10/17/20
  */
 import java.util.ArrayList;
