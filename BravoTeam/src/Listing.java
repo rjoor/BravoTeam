@@ -239,4 +239,13 @@ public class Listing {
   public void setType(Type type) {
 	  this.type = type;
   }
+  
+  /**
+   * Used for tester
+   * @return string for tester
+   */
+  public String printData() {
+	  String ret = "address: " +address + ", numBeds: " + numBeds + ", numBaths: " + numBaths + ", squareFootage: " + squareFootage + ", amenities: " + amenities + ", rentCost: " + rentCost + ", utilitiesIncluded: " + utilitiesIncluded + ", leaseDuration: " + leaseDuration + ", canSublet: " + canSublet + ", distanceFromCampus: " + distanceFromCampus + ", isHandicapAccessible: " + isHandicapAccessible;
+	  return ret;
+  }
 }

@@ -94,4 +94,12 @@ public class User {
   public void setRating(int rating) {
     this.rating = rating;
   }
+  
+  /**
+   * Prints data for the tester
+   */
+  public String printData() {
+	  String ret = "firstName: " + firstName + ", lastName: " + lastName + ", isGuest: " + isGuest + ", rating: " + rating;
+	  return ret;
+  }
 }

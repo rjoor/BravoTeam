@@ -19,10 +19,14 @@ public class ListingTester {
 		
 		//TODO add amenities to each instance. 
 		
-		System.out.println(house);
-		System.out.println(apartment);
-		System.out.println(townhouse);
-		System.out.println(duplex);
+		System.out.println("House: ");
+		System.out.println(house.printData());
+		System.out.println("Apartment: ");
+		System.out.println(apartment.printData());
+		System.out.println("Townhouse: ");
+		System.out.println(townhouse.printData());
+		System.out.println("Duplex: ");
+		System.out.println(duplex.printData());
 
 	}
 

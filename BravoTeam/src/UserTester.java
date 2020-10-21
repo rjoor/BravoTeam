@@ -9,11 +9,13 @@
  */
 public class UserTester {
 	
-	public void main(String[] args) {
+	public static void main(String[] args) {
 		User student = new Student("Jerry", "Seinfeld", false, 1, "0654", null, true);
 		User landlord = new Landlord("George", "Castanza", false, 1, null);
 		
-		student.toString();
-		landlord.toString();
+		System.out.println("student: ");
+		System.out.println(student.printData());
+		System.out.println("landlord: ");
+		System.out.println(landlord.printData());
 	}
 }
