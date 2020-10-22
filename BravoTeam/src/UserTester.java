@@ -10,6 +10,7 @@
 public class UserTester {
 	
 	public static void main(String[] args) {
+		
 		User student = new Student("Jerry", "Seinfeld", false, 1, "0654", null, true);
 		User landlord = new Landlord("George", "Castanza", false, 1, null);
 		
