@@ -11,6 +11,9 @@ import java.util.ArrayList;
 public class ListingList {
   private static ListingList listingList;
   ArrayList<Listing> listings = new ArrayList<Listing>();
+  int position;
+  //TODO write getters and setters
+  //TODO unique identifier class in java. look at and learn
 
   private ListingList() {}
 
