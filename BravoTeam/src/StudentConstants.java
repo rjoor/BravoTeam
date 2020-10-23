@@ -11,6 +11,7 @@
  *
  */
 public abstract class StudentConstants {
+	protected static final String ID = "id";
 	protected static final String STUDENT_FILE_NAME = "src/student.json";
 	protected static final String STUDENTS = "students";
 	protected static final String STUDENT_FIRST_NAME = "firstName";
