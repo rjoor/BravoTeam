@@ -8,6 +8,7 @@
  *
  */
 public abstract class LandlordConstants {
+	protected static final String LANDLORD_FILE_NAME = "src/landLords.json";
 	protected static final String ID = "id";
 	protected static final String FIRST_NAME = "firstName";
 	protected static final String LAST_NAME = "lastName";

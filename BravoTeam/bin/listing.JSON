@@ -1,0 +1,17 @@
+{"listings":[
+  {
+        "id":1,
+        "address":"200 Apple St",
+        "numBeds": 2,
+    "numBaths": 2.5,
+    "squareFootage": 800,
+    "amenities": null,
+    "rentCost": 800,
+    "utilitiesIncluded": true,
+    "leaseDuration": "12 months",
+    "canSublet": false,
+    "distanceFromCampus": 3,
+    "isHandicapAccessible": true,
+    "type": "Apartment"
+   },{}
+]}

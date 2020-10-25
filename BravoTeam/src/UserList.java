@@ -30,9 +30,8 @@ public class UserList {
    * @param userName a string of the user to search in the list
    * @return User a class of the user
    */
-  public User getUser(String userName) {
-    // TODO write logic
-    return null;
+  public ArrayList<User> getUser() {
+    return users;
   }
 
 }
