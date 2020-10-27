@@ -41,4 +41,8 @@ public class Landlord extends User {
   public void editListing(Listing listing, int index) {
     propertiesManaged.set(index, listing);
   }
+  
+  public ArrayList<Listing> getPropertiesManaged() {
+    return propertiesManaged;
+  }
 }

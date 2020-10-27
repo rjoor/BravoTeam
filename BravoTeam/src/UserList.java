@@ -30,8 +30,21 @@ public class UserList {
    * @param userName a string of the user to search in the list
    * @return User a class of the user
    */
-  public ArrayList<User> getUser() {
+  public ArrayList<User> getUser(String userName) {
     return users;
-  }
+    /*for(User user : users) {
+      if((user.getFirstName() + " " + user.getLastName()).equals(userName)) {
+        return user;
+       }
+     }
+    User nullUser = new User("NULL", "NULL", false, -1);
+    return nullUser;
+    */
+   }
+  
 
 }
+
+ 
+
+

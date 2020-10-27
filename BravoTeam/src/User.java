@@ -28,7 +28,7 @@ public class User {
    * 
    * @return firstName a string of the first name
    */
-  public String getFirtName() {
+  public String getFirstName() {
     return firstName;
   }
 
@@ -37,7 +37,7 @@ public class User {
    * 
    * @param firstName a string value of a user's first name
    */
-  public void setFirtName(String firtName) {
+  public void setFirstName(String firtName) {
     this.firstName = firtName;
   }
 
@@ -93,6 +93,10 @@ public class User {
    */
   public void setRating(int rating) {
     this.rating = rating;
+  }
+  
+  public boolean getIsGuest() {
+    return isGuest;
   }
   
   /**

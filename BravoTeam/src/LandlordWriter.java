@@ -12,8 +12,8 @@ import org.json.simple.JSONObject;
 public class LandlordWriter extends LandlordConstants {
 	
 	public static void saveLandlord() {
-		UserList user = UserList.getInstance();
-		ArrayList<User> landlords = user.getUser();
+		LandlordList landlord = LandlordList.getInstance();
+		ArrayList<Landlord> landlords = landlord.getLandlord();
 		JSONArray jsonLandlords = new JSONArray();
 		
 		for (int i = 0; i < landlords.size(); i++) {
@@ -29,14 +29,14 @@ public class LandlordWriter extends LandlordConstants {
 		}
 	}
 	
-	public static JSONObject getLandlordJSON(User user) {
+	public static JSONObject getLandlordJSON(Landlord landlord) {
 		JSONObject userDetails = new JSONObject();
-		userDetails.put(ID, user.getID());
-		userDetails.put(FIRST_NAME, user.getFirtName());
-		userDetails.put(LAST_NAME , user.getLastName());
-		userDetails.put(IS_GUEST, user.getIsGuest());
-		userDetails.put(RATING, user.getRating());
-		userDetails.put(PROPERTIES_MANAGED, user.getPropertiesManaged());
+		//userDetails.put(ID, landlord.getID());
+		userDetails.put(FIRST_NAME, landlord.getFirstName());
+		userDetails.put(LAST_NAME , landlord.getLastName());
+		userDetails.put(IS_GUEST, landlord.getIsGuest());
+		userDetails.put(RATING, landlord.getRating());
+		userDetails.put(PROPERTIES_MANAGED, landlord.getPropertiesManaged());
 		
 		return userDetails;
 	}
