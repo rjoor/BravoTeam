@@ -1,5 +1,5 @@
 /**
- * Landlord Loader class for the Landlord JSON file
+  * Landlord Loader class for the Landlord JSON file
  * @author hkumte Bravo Team 10/25/20
  *
  */

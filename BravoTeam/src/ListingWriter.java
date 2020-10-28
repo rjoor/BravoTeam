@@ -15,17 +15,17 @@ public class ListingWriter extends ListingConstants {
 public static JSONObject getListingJSON(Listing listing) {
 		JSONObject listingDetails = new JSONObject();
 		listingDetails.put(ID, listing.getID());	
-		listingDetails.put(Address, listing.getAddress());	
-		listingDetails.put(NumBeds, listing.getNumBeds());	
-		listingDetails.put(SquareFootage, listing.getSquareFootage());	
-		listingDetails.put(Amenities, listing.getAmenities());	
-		listingDetails.put(RentCost, listing.getID());	
-		listingDetails.put(UtilitiesIncluded, listing.getUtilitiesIncluded());	
-		listingDetails.put(LeaseDuration, listing.getLeaseDuration());	
-		listingDetails.put(CanSublet, listing.getCanSublet());	
-		listingDetails.put(DistanceFromCampus, listing.getDistanceFromCampus());	
-		listingDetails.put(IsHandicapAccessible, listing.getIsHandicapAccessible());	
-		listingDetails.put(Type, listing.getType());	
+		listingDetails.put(ADDRESS, listing.getAddress());	
+		listingDetails.put(NUM_BEDS, listing.getNumBeds());	
+		listingDetails.put(SQUARE_FOOTAGE, listing.getSquareFootage());	
+		listingDetails.put(AMENITIES, listing.getAmenities());	
+		listingDetails.put(RENT_COST, listing.getRentCost());	
+		listingDetails.put(UTILITIES_INCLUDED, listing.isUtilitiesIncluded());	
+		listingDetails.put(LEASE_DURATION, listing.getLeaseDuration());	
+		listingDetails.put(CAN_SUBLET, listing.isCanSublet());	
+		listingDetails.put(DISTANCE_FROM_CAMPUS, listing.getDistanceFromCampus());	
+		listingDetails.put(IS_HANDICAP_ACCESSIBLE, listing.getIsHandicapAccessible());	
+		listingDetails.put(TYPE, listing.getType());	
 		
 		return listingDetails;
 	}

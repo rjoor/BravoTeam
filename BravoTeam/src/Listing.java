@@ -248,4 +248,16 @@ public class Listing {
 	  String ret = "address: " +address + ", numBeds: " + numBeds + ", numBaths: " + numBaths + ", squareFootage: " + squareFootage + ", amenities: " + amenities + ", rentCost: " + rentCost + ", utilitiesIncluded: " + utilitiesIncluded + ", leaseDuration: " + leaseDuration + ", canSublet: " + canSublet + ", distanceFromCampus: " + distanceFromCampus + ", isHandicapAccessible: " + isHandicapAccessible;
 	  return ret;
   }
+  
+  public void setIsHandicapAccessible() {
+    isHandicapAccessible = !isHandicapAccessible;
+  }
+  
+  public boolean getIsHandicapAccessible() {
+    return isHandicapAccessible;
+  }
+  
+  public int getID() {
+    return id;
+  }
 }
