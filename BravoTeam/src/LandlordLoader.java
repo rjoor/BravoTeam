@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 public class LandlordLoader extends LandlordConstants {
 	public static ArrayList<User> loadLandlord() {
@@ -21,14 +24,14 @@ public class LandlordLoader extends LandlordConstants {
 			for(int i = 0; i < landlordJSON.size(); i++)
 			{
 				JSONObject userJSON = (JSONObject)landlordJSON.get(i);
-				String id = (String)userJSON.get(ID);
+				int id = (int)userJSON.get(ID);
 				String firstName = (String)userJSON.get(FIRST_NAME);
 				String lastName = (String)userJSON.get(LAST_NAME);
-				String isGuest = (String)userJSON.get(IS_GUEST);
-				String rating = (String)userJSON.get(RATING);
-				String propertiesManaged = (String)userJSON.get(PROPERTIES_MANAGED);
+				boolean isGuest = (boolean)userJSON.get(IS_GUEST);
+				int rating = (int)userJSON.get(RATING);
+				ArrayList<Listing> propertiesManaged = (ArrayList<Listing>)userJSON.get(PROPERTIES_MANAGED);
 				
-				landlords.add(new User(id, firstName, lastName, isGuest, rating, propertiesManaged));
+				landlords.add(new Landlord(id, firstName, lastName, isGuest, rating, propertiesManaged));
 			}
 			
 			return landlords;
