@@ -1,4 +1,4 @@
-{"landlords":[
+[
   {
 		"id":1,
 		"firstName":"Bobbie",
@@ -6,5 +6,5 @@
 	"isGuest": false,
 	"rating":5,
 	"propertiesManaged":"100 Spruce"
-   },{}	
-]}
+   },{}
+]

@@ -1,4 +1,4 @@
-{"listings":[
+[
   {
         "id":1,
         "address":"200 Apple St",
@@ -14,4 +14,4 @@
     "isHandicapAccessible": true,
     "type": "Apartment"
    },{}
-]}
+]
