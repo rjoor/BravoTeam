@@ -11,8 +11,8 @@ public class UserTester {
 	
 	public static void main(String[] args) {
 		
-		User student = new Student("Jerry", "Seinfeld", false, 1, "0654", null, true);
-		User landlord = new Landlord("George", "Castanza", false, 1, null);
+		User student = new Student(1, "Jerry", "Seinfeld", false, 1, "0654", null, true);
+		User landlord = new Landlord(2, "George", "Castanza", false, 1, null);
 		
 		System.out.println("student: ");
 		System.out.println(student.printData());

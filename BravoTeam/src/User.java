@@ -8,11 +8,13 @@
  *
  */
 public class User {
+	protected int id;
   protected String firstName, lastName;
   protected boolean isGuest;
   protected int rating;
 
-  public User(String firstName, String lastName, boolean isGuest, int rating) {
+  public User(int id, String firstName, String lastName, boolean isGuest, int rating) {
+	  this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.isGuest = true;
@@ -20,8 +22,26 @@ public class User {
   }
 
   /*********************************************************************
-   * 8 General methods
+   * General methods
    */
+  
+  /**
+   * getId returns User's id, which corresponds to its index in an array list
+   * 
+   * @return the integer value of the id
+   */
+  public int getId() {
+	  return id;
+  }
+  
+  /**
+   * setId takes in a id parameter and sets it as the value
+   * 
+   * @param id and integer value corresponding to a place in a list
+   */
+  public void setId(int id) {
+	  this.id = id;
+  }
 
   /**
    * getFirstName returns a string representation of the user's first name

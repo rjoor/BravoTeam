@@ -13,9 +13,9 @@ public class Student extends User {
   private ArrayList<Listing> favoritesListings;
   private boolean isUSCStudent;
 
-  public Student(String firstName, String lastName, boolean isGuest, int rating, String studentid,
+  public Student(int id, String firstName, String lastName, boolean isGuest, int rating, String studentid,
       ArrayList<Listing> favoritesListings, boolean isUSCStudent) {
-    super(firstName, lastName, isGuest, rating);
+    super(id, firstName, lastName, isGuest, rating);
     this.studentid = studentid;
     this.favoritesListings = favoritesListings;
     this.isUSCStudent = isUSCStudent;
