@@ -28,11 +28,51 @@ public class SystemApplicationUI {
 				continue;
 			}
 			
+			//If the user chooses the last option, log out
 			if (usercommand == mainMenuOptions.length - 1) {
+				break;
+			}
+			
+			// Switch for user command based on input
+			switch(usercommand) {
+			case(0):
+				createAccount();
+				break;
+				
+			case(1):
+				logIn();
+				break;
+				
+			case(2):
+				searchHomes();
+				break;
+			
+			case(3):
+				postListing();
+				break;
+				
+			default:
 				break;
 			}
 		}
 	}
+	
+	private void createAccount() {
+		//TODO Add logic 
+	}
+	
+	private void logIn() {
+		//TODO Add logic
+	}
+	
+	private void searchHomes() {
+		//TODO Add logic
+	}
+	
+	private void postListing() {
+		//TODO Add logic
+	}
+	
 	
 	private void displayMenu() {
 		System.out.println("\n\n      Main Menu \n");
