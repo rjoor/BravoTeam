@@ -5,6 +5,6 @@
 		"lastName":"Booshay",
 	"isGuest": false,
 	"rating":5,
-	"propertiesManaged":"100 Spruce"
+	"propertiesManaged":[1,3,5,7]
    },{}
 ]
