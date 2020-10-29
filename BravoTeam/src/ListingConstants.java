@@ -11,6 +11,7 @@ public abstract class ListingConstants {
 	protected static final String ID = "id";
 	protected static final String ADDRESS = "address";
 	protected static final String NUM_BEDS = "numBeds";
+	protected static final String NUM_BATHS = "numBaths";
 	protected static final String SQUARE_FOOTAGE = "squareFootage";
 	protected static final String AMENITIES = "amenities";
 	protected static final String RENT_COST = "rentCost";
@@ -20,4 +21,5 @@ public abstract class ListingConstants {
 	protected static final String DISTANCE_FROM_CAMPUS = "distanceFromCampus";
 	protected static final String IS_HANDICAP_ACCESSIBLE = "isHandicapAccessible";
 	protected static final String TYPE = "type";
+	protected static final String LISTING_FILE = "listing.json";
 }
