@@ -10,8 +10,27 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class ListingWriter extends ListingConstants {
-	//TODO
-	
+
+		public static void saveListing() {
+			ListingList listing = ListingList.getInstance();
+			ArrayList<Listing> listings = listing.getListing();
+			JSONArray jsonListings = new JSONArray();
+		
+		for (int i = 0; i < listings.size(); i++) {
+			jsonListings.add(getListingJSON(listings.get(i)));
+		}
+		
+		 try (FileWriter file = new FileWriter(LISTING)) {
+			 file.write(jsonListings.toJSONString());
+			 file.flush();
+		 }
+		 
+		 catch (IOException e) {
+			 e.printStackTrace();
+		 }
+		 
+		}
+
 public static JSONObject getListingJSON(Listing listing) {
 		JSONObject listingDetails = new JSONObject();
 		listingDetails.put(ID, listing.getID());	
