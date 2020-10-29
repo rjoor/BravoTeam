@@ -21,5 +21,5 @@ public abstract class ListingConstants {
 	protected static final String DISTANCE_FROM_CAMPUS = "distanceFromCampus";
 	protected static final String IS_HANDICAP_ACCESSIBLE = "isHandicapAccessible";
 	protected static final String TYPE = "type";
-	protected static final String LISTING_FILE = "listing.json";
+	protected static final String LISTING_FILE_NAME = "src/listing.json";
 }

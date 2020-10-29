@@ -14,7 +14,7 @@ public class ListingLoader extends ListingConstants {
 		ArrayList<Listing> listings = new ArrayList<Listing>();
 		
 		try {
-			FileReader reader = new FileReader(LISTING_FILE);
+			FileReader reader = new FileReader(LISTING_FILE_NAME);
 			JSONParser parser = new JSONParser();
 			JSONArray listingsJSON = (JSONArray) new JSONParser().parse(reader);
 			

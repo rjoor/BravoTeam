@@ -17,6 +17,7 @@ public abstract class StudentConstants {
 	protected static final String STUDENT_FIRST_NAME = "firstName";
 	protected static final String STUDENT_LAST_NAME = "lastName";
 	protected static final String IS_GUEST = "isGuest";
+	protected static final String STUDENT_RATING = "rating";
 	protected static final String STUDENT_ID = "studentid";
 	protected static final String FAVORITE_LISTINGS = "favoritesListings";
 	protected static final String IS_USC_STUDENT = "isUSCStudent";
