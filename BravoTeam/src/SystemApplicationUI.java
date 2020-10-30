@@ -32,7 +32,7 @@ public class SystemApplicationUI {
 		LandlordList landlord = LandlordList.getInstance();
 		ArrayList<Landlord> lists = landlord.getLandlord();
 		for (Landlord ll : lists) {
-			System.out.println(ll.getFirstName() + " "+ ll.getLastName() + ", Rating: " + ll.getRating() + ", Properties Managed: " + ll.getPropertiesManaged());
+			System.out.println(ll.getFirstName() + " " + ll.getLastName() + ", Rating: " + ll.getRating() + ", Properties Managed: " + ll.getPropertiesManaged());
 		}
 	}
 	
