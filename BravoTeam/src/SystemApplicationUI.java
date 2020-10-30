@@ -15,8 +15,16 @@ public class SystemApplicationUI {
 		systemapplicationUI = new SystemApplication();
 	}
 	
+	/**
+	 * Tester for the landlord JSON
+	 */
+	public void tester() {
+		LandlordList landlord = LandlordList.getInstance();
+		landlord.addLandlord(3, "Antonio", "Brown", false, 4, null);
+	}
+	
 	public void run() {
-		System.out.println(WELCOME_MESSAGE);
+		System.out.println(WELCOME_MESSAGE);		
 		
 		while(true) {
 			displayMenu();
@@ -96,6 +104,7 @@ public class SystemApplicationUI {
 	
 	public static void main(String[] args) {
 		SystemApplicationUI systemInterface = new SystemApplicationUI();
+		systemInterface.tester();
 		systemInterface.run();
 	}
 }
