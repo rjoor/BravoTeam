@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 /**
  * 
  * @author Bravo Team 10/26/20
@@ -16,11 +17,23 @@ public class SystemApplicationUI {
 	}
 	
 	/**
-	 * Tester for the landlord JSON
+	 * Example add to the landlord JSON
 	 */
-	public void tester() {
+	public void addJSON() {
 		LandlordList landlord = LandlordList.getInstance();
 		landlord.addLandlord(3, "Antonio", "Brown", false, 4, null);
+		landlord.addLandlord(1, "Bobby", "Brown", false, 2, null);
+	}
+	
+	/**
+	 * Reading landlord JSON
+	 */
+	public void displayLandlord() {
+		LandlordList landlord = LandlordList.getInstance();
+		ArrayList<Landlord> lists = landlord.getLandlord();
+		for (Landlord ll : lists) {
+			System.out.println(ll.getFirstName() + " "+ ll.getLastName() + ", Rating: " + ll.getRating() + ", Properties Managed: " + ll.getPropertiesManaged());
+		}
 	}
 	
 	public void run() {
@@ -104,7 +117,8 @@ public class SystemApplicationUI {
 	
 	public static void main(String[] args) {
 		SystemApplicationUI systemInterface = new SystemApplicationUI();
-		systemInterface.tester();
+		systemInterface.addJSON();
+		systemInterface.displayLandlord();
 		systemInterface.run();
 	}
 }

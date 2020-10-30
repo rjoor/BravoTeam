@@ -1,10 +1,1 @@
-[
-  {
-		"id":1,
-		"firstName":"Bobbie",
-		"lastName":"Booshay",
-	"isGuest": false,
-	"rating":5,
-	"propertiesManaged":[1,3,5,7]
-   },{}
-]
+[{"firstName":"Antonio","lastName":"Brown","isGuest":true,"rating":4,"propertiesManaged":null},{"firstName":"Bobby","lastName":"Brown","isGuest":true,"rating":2,"propertiesManaged":null}]
