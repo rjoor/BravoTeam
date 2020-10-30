@@ -79,15 +79,85 @@ public class SystemApplicationUI {
 	}
 	
 	private void createAccount() {
-		//TODO Add logic 
+		System.out.println("Are you a student or property manager? \n1. Student \n2. Property Manager");
+		int input = scanner.nextInt();
+		if (input == 1) {
+			System.out.println("What is your first name?");
+			String name = scanner.nextLine();
+			System.out.println("What is your last name?");
+			String lastname = scanner.nextLine();
+			System.out.println("What is your username?");
+			String username = scanner.nextLine();
+			System.out.println("What is your password?");
+			String password = scanner.nextLine();
+			//add to student JSON method
+			System.out.println("Congrats, your account is created!");
+		}
+		else if (input == 2) {
+			System.out.println("What is your first name?");
+			String name = scanner.nextLine();
+			scanner.hasNextLine();
+			System.out.println("What is your last name?");
+			String lastname = scanner.nextLine();
+			scanner.hasNextLine();
+			System.out.println("What is your username?");
+			String username = scanner.nextLine();
+			scanner.hasNextLine();
+			System.out.println("What is your password?");
+			String password = scanner.nextLine();
+			scanner.hasNextLine();
+			LandlordList landlord = LandlordList.getInstance();
+			landlord.addLandlord(6, name, lastname, false, 0, null);
+			System.out.println("Congrats, your account is created!");
+		}
+		else {
+			System.out.println("Invalid command");
+			return;
+		}
+		
 	}
 	
 	private void logIn() {
-		//TODO Add logic
+		System.out.println("What is your username?");
+		String input = scanner.nextLine();
+		System.out.println("What is your password?");
+		String password = scanner.nextLine();
+		System.out.println("Welcome back, "+input);
+		return;
 	}
 	
 	private void searchHomes() {
-		//TODO Add logic
+		System.out.println("\nWhat type of housing are you looking for? \n1. House\n2. Apartment \n3. Townhouse \n4. Duplex");
+		String home = scanner.nextLine();
+		// List out listing JSON
+		System.out.println("\nSelect the id of the listing you desire");
+		int id = scanner.nextInt();
+		System.out.println("Would you like to live with another registered user? \n1. Yes \n2. No");
+		int input = scanner.nextInt();
+		if (input == 1) {
+			System.out.println("What is their username?");
+		}
+		System.out.println("Do you have an account? \n1. Yes \n2. No");
+		int login = scanner.nextInt();
+		if (login == 1) {
+			System.out.println("What is your username?");
+			String username = scanner.nextLine();
+			scanner.hasNext();
+			System.out.println("What is your password?");
+			String password = scanner.nextLine();
+			scanner.hasNext();
+			System.out.println("Welcome back, "+username);
+		}
+		else if (login == 2) {
+			System.out.println("You must first make an account at the menu.");
+			return;
+		}
+		else {
+			System.out.println("Invalid command");
+			return;
+		}
+		// Code to generate and fill in lease agreement
+		System.out.println("Congratulations on your new home!");
 	}
 	
 	/**
@@ -154,8 +224,8 @@ public class SystemApplicationUI {
 	
 	public static void main(String[] args) {
 		SystemApplicationUI systemInterface = new SystemApplicationUI();
-		systemInterface.addJSON();
-		systemInterface.displayLandlord();
+		//systemInterface.addJSON();
+		//systemInterface.displayLandlord();
 		systemInterface.run();
 	}
 }
