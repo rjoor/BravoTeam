@@ -90,9 +90,46 @@ public class SystemApplicationUI {
 		//TODO Add logic
 	}
 	
+	/**
+	 * Post Listing Funciton for UI
+	 */
 	private void postListing() {
-		//TODO Add logic
+		//TODO Add More logic
+		System.out.println("Are you a registered property manager? \n1. Yes\n2. No");
+		String input = scanner.nextLine();
+		if (input.equalsIgnoreCase("2")) {
+			System.out.println("Sorry, you must be a property manager to post a listing");
+		}
+		if (input.equalsIgnoreCase("1")) {
+			System.out.println("What type of property is the listing?");
+			String listingType = scanner.nextLine();
+			System.out.println("How many beds in the unit?");
+			int numBed = scanner.nextInt();
+			System.out.println("How many baths in the unit?");
+			double numBath = scanner.nextDouble();
+			System.out.println("How many square feet is the unit?");
+			int sqrfeet = scanner.nextInt();
+			System.out.println("What is the monthly rate for the unit?");
+			int rate = scanner.nextInt();
+			System.out.println("Are utilities included? Y or N");
+			scanner.hasNext();
+			String utilities = scanner.nextLine();
+			System.out.println("How long does the lease last?");
+			scanner.hasNext();
+			String length = scanner.nextLine();
+			System.out.println("Can the leasee sublet the lease?");
+			String sublet = scanner.nextLine();
+			scanner.hasNext();
+			System.out.println("What is the distance from campus, to the nearest mile?");
+			int distance = scanner.nextInt();
+			System.out.println("Enter all the amenities included, seperated by a comma");
+			scanner.hasNext();
+			String amenities = scanner.nextLine();
+			//TODO Add the new listing
+			//System.out.println("Congrats, your listing was succesfully added!");
+		}
 	}
+	
 	
 	
 	private void displayMenu() {
