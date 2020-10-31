@@ -36,7 +36,7 @@ public class ListingLoader extends ListingConstants {
 				boolean isHandicapAccessible = (boolean)listingJSON.get(IS_HANDICAP_ACCESSIBLE);
 				Type type = (Type)listingJSON.get(TYPE);
 				
-				listings.add(new Listing(id, address, numBeds, numBaths, squareFootage, amenities, rentCost, utilitiesIncluded, leaseDuration, isCanSublet, distanceFromCampus, isHandicapAccessible, type));
+				listings.add(new Listing(address, numBeds, numBaths, squareFootage, amenities, rentCost, utilitiesIncluded, leaseDuration, isCanSublet, distanceFromCampus, isHandicapAccessible, id, type));
 			}
 			
 			return listings;
