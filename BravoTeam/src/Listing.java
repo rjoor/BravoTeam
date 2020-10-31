@@ -21,8 +21,8 @@ public class Listing {
   protected Type type;
 
   public Listing(String address, int numBeds, double numBaths, int squareFootage,
-      ArrayList<String> amenities, int rentCost, boolean utilitiesIncluded, String leaseDuration,
-      boolean canSublet, int distanceFromCampus, boolean isHandicapAccessible, int id, Type type) {
+	      ArrayList<String> amenities, int rentCost, boolean utilitiesIncluded, String leaseDuration,
+	      boolean canSublet, int distanceFromCampus, boolean isHandicapAccessible, int id, Type type) {
     this.address = address;
     this.numBaths = numBaths;
     this.numBeds = numBeds;

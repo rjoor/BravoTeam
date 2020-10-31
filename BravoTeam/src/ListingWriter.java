@@ -20,7 +20,7 @@ public class ListingWriter extends ListingConstants {
 			jsonListings.add(getListingJSON(listings.get(i)));
 		}
 		
-		 try (FileWriter file = new FileWriter(LISTING)) {
+		 try (FileWriter file = new FileWriter(LISTING_FILE_NAME)) {
 			 file.write(jsonListings.toJSONString());
 			 file.flush();
 		 }
@@ -36,6 +36,7 @@ public static JSONObject getListingJSON(Listing listing) {
 		listingDetails.put(ID, listing.getID());	
 		listingDetails.put(ADDRESS, listing.getAddress());	
 		listingDetails.put(NUM_BEDS, listing.getNumBeds());	
+		listingDetails.put(NUM_BATHS, listing.getNumBaths());
 		listingDetails.put(SQUARE_FOOTAGE, listing.getSquareFootage());	
 		listingDetails.put(AMENITIES, listing.getAmenities());	
 		listingDetails.put(RENT_COST, listing.getRentCost());	

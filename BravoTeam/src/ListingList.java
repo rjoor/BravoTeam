@@ -35,9 +35,9 @@ public class ListingList {
    * @param address a string representation of the listing's address
    * @return Listing a class of the type Listing
    */
-  public Listing getListing(String address) {
+  public ArrayList<Listing> getListing() {
     // TODO write the logic
-    return null;
+    return listings;
   }
   
    public int addListing(String address, int numBeds, double numBaths, int squareFootage,
