@@ -30,8 +30,8 @@ public class LeaseApplication extends LeaseConstants {
 		date = this.date;
 		landlord_name = this.landlord.getFirstName();
 		tenants = this.tenants;
-		num_bed = Integer.parseInt(listing.getNumBeds());
-		num_bath = Double.parseDouble(listing.getNumBaths());
+		num_bed = Integer.toString(listing.getNumBeds());
+		num_bath = Double.toString(listing.getNumBaths());
 		address = listing.getAddress();
 	}
 	
@@ -48,12 +48,12 @@ public class LeaseApplication extends LeaseConstants {
 			while(scannerObject.hasNextLine()) {
 				lease += scannerObject.nextLine();
 			}
-			return lease;
-			
+			scannerObject.close();
 		}
 		catch(IOException e) {
 			e.printStackTrace();
 		}
+		return lease;
 	}
 	
 	public void parseTemplate(String lease) {
