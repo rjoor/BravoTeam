@@ -274,6 +274,7 @@ public class SystemApplicationUI {
 		System.out.println(lease);
 		*/
 		//systemInterface.displayListings();
+		
 		systemInterface.run();
 		//System.out.println(java.util.Arrays.asList(Amenities.values()));
 		
