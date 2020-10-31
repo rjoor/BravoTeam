@@ -36,6 +36,14 @@ public class SystemApplicationUI {
 		}
 	}
 	
+	public void displayListings() {
+		ListingList listings = ListingList.getInstance();
+		ArrayList<Listing> lists = listings.getListing();
+		for (Listing ll : lists) {
+			System.out.println(ll.getAddress());
+		}
+	}
+	
 	public void run() {
 		System.out.println(WELCOME_MESSAGE);		
 		
@@ -105,10 +113,10 @@ public class SystemApplicationUI {
 			scanner.hasNextLine();
 			System.out.println("What is your password?");
 			String password = scanner.nextLine();
-			scanner.hasNextLine();
-			LandlordList landlord = LandlordList.getInstance();
-			landlord.addLandlord(6, name, lastname, false, 0, null);
+			//LandlordList landlord = LandlordList.getInstance();
+			//landlord.addLandlord(6, name, lastname, false, 0, null);
 			System.out.println("Congrats, your account is created!");
+			return;
 		}
 		else {
 			System.out.println("Invalid command");
@@ -196,7 +204,7 @@ public class SystemApplicationUI {
 			scanner.hasNext();
 			String amenities = scanner.nextLine();
 			//TODO Add the new listing
-			//System.out.println("Congrats, your listing was succesfully added!");
+			//System.out.println("Congrats, your listing was successfully added!");
 		}
 	}
 	
@@ -222,10 +230,52 @@ public class SystemApplicationUI {
 		return -1;
 	}
 	
+
+	
 	public static void main(String[] args) {
 		SystemApplicationUI systemInterface = new SystemApplicationUI();
 		//systemInterface.addJSON();
 		//systemInterface.displayLandlord();
+		/*Landlord landlord = new Landlord(1, "John", "Baker", false, 5, null);
+		Student student = new Student(2, "Antonio", "Brown", false, 5, "Five", null, true);
+		Listing listing = new Listing("100 Spring street", 2, 3, 1200, null, 900, false, "12 montsh", true, 2, false, 2, Type.Apartment);
+		String lease = "This Lease Agreement is made and entered on <DATE> by and between " + student.getFirstName() + " " + student.getLastName() + " and <TENANT(s)>.\r\n" + 
+				"\r\n" + 
+				"Subject to the terms and conditions stated below the parties agree as follows:\r\n" + 
+				"\r\n" + 
+				"1. Landloard Tenant Act. This Rental Agreement is governed by the South Carolina Residential Landlord and Tenant Act.\r\n" + 
+				"\r\n" + 
+				"2. Property. Landloard, in consideration of the lease payments provided in this agreement, leases to Tenant a house with " + listing.getNumBeds() + "  bedrooms and " + listing.getNumBaths() + " bathrooms, located at " + listing.getAddress() + ", South Carolina  29201. No other portion of the building wherein the Property is located is included unless expressly provided for in this agreement.\r\n" + 
+				"\r\n" + 
+				"3. Term. The Tenant will coninue to pay rent from <START DATE> to <END DATE>.\r\n" + 
+				"\r\n" + 
+				"4. Rent. The Tenant will pay " + listing.getRentCost() + " each month on the first of the month.\r\n" + 
+				"\r\n" + 
+				"5. Payment should be sent to:<PAYMENT ADDRESS>\r\n" + 
+				"\r\n" + 
+				"6. Damages. Charges will be billed to the client for damaged property, up to <DAMAGE COST>.\r\n" + 
+				"\r\n" + 
+				"7. Signatures\r\n" + 
+				"\r\n" + 
+				"\r\n" + 
+				"--------------\r\n" + 
+				"<TENANT 1>\r\n" + 
+				"\r\n" + 
+				"\r\n" + 
+				"\r\n" + 
+				"--------------\r\n" + 
+				"(TENANT X, this will only appear if applicable)\r\n" + 
+				"\r\n" + 
+				"\r\n" + 
+				"\r\n" + 
+				"\r\n" + 
+				"--------------\r\n" + 
+				"" + landlord.getFirstName() +"";
+		System.out.println(lease);
+		*/
+		//systemInterface.displayListings();
 		systemInterface.run();
+		//System.out.println(java.util.Arrays.asList(Amenities.values()));
+		
 	}
 }
