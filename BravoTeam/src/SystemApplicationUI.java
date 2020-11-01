@@ -87,7 +87,7 @@ public class SystemApplicationUI {
 	}
 	
 	private void createAccount() {
-		System.out.println("Are you a student or property manager? \n1. Student \n2. Property Manager");
+		System.out.println("Are you a student or pproperty manager? \n1. Student \n2. Property Manager");
 		int input = scanner.nextInt();
 		if (input == 1) {
 			System.out.println("What is your first name?");
@@ -273,7 +273,7 @@ public class SystemApplicationUI {
 				"" + landlord.getFirstName() +"";
 		System.out.println(lease);
 		*/
-		//systemInterface.displayListings();
+		systemInterface.displayListings();
 		systemInterface.run();
 		//System.out.println(java.util.Arrays.asList(Amenities.values()));
 		

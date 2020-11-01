@@ -11,7 +11,6 @@ import java.util.ArrayList;
 public class ListingList {
   private static ListingList listingList;
   ArrayList<Listing> listings = new ArrayList<Listing>();
-  int position;
   //TODO write getters and setters
   //TODO unique identifier class in java. look at and learn
 
@@ -36,16 +35,15 @@ public class ListingList {
    * @return Listing a class of the type Listing
    */
   public ArrayList<Listing> getListing() {
-    // TODO write the logic
     return listings;
   }
   
-   public int addListing(String address, int numBeds, double numBaths, int squareFootage,
+   public void addListing(String address, int numBeds, double numBaths, int squareFootage,
       ArrayList<String> amenities, int rentCost, boolean utilitiesIncluded, String leaseDuration,
-      boolean canSublet, int distanceFromCampus, boolean isHandicapAccessible, int id) {
-      /*listings.add(new Listing(address, numBeds, numBaths, squareFootage,
+      boolean canSublet, int distanceFromCampus, boolean isHandicapAccessible, int id, Type type) {
+      listings.add(new Listing(address, numBeds, numBaths, squareFootage,
         amenities, rentCost, utilitiesIncluded, leaseDuration,
-        canSublet, distanceFromCampus, isHandicapAccessible, listings.size())); */
-      return 0;  /*listings.size();*/ 
+        canSublet, distanceFromCampus, isHandicapAccessible, listings.size(), type));
+      ListingWriter.saveListing();
   } 
 }
