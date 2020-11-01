@@ -28,10 +28,9 @@ public class LandlordLoader extends LandlordConstants {
 				String firstName = (String)userJSON.get(FIRST_NAME);
 				String lastName = (String)userJSON.get(LAST_NAME);
 				boolean isGuest = (boolean)userJSON.get(IS_GUEST);
-				int rating = (int)userJSON.get(RATING);
 				ArrayList<Listing> propertiesManaged = (ArrayList<Listing>)userJSON.get(PROPERTIES_MANAGED);
 				
-				landlords.add(new Landlord(id, firstName, lastName, isGuest, rating, propertiesManaged));
+				landlords.add(new Landlord(id, firstName, lastName, isGuest, propertiesManaged));
 			}
 			
 			return landlords;

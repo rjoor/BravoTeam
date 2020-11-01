@@ -13,6 +13,5 @@ public abstract class LandlordConstants {
 	protected static final String FIRST_NAME = "firstName";
 	protected static final String LAST_NAME = "lastName";
 	protected static final String IS_GUEST = "isGuest";
-	protected static final String RATING = "rating";
 	protected static final String PROPERTIES_MANAGED = "propertiesManaged";
 }

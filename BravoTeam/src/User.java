@@ -13,12 +13,11 @@ public class User {
   protected boolean isGuest;
   protected int rating;
 
-  public User(int id, String firstName, String lastName, boolean isGuest, int rating) {
+  public User(int id, String firstName, String lastName, boolean isGuest) {
 	  this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
     this.isGuest = true;
-    this.rating = rating;
   }
 
   /*********************************************************************

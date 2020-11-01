@@ -8,9 +8,8 @@ import java.util.ArrayList;
 public class Landlord extends User {
   private ArrayList<Listing> propertiesManaged;
 
-  public Landlord(int id, String firstName, String lastName, boolean isGuest, int rating,
-      ArrayList<Listing> propertiesManaged) {
-    super(id, firstName, lastName, isGuest, rating);
+  public Landlord(int id, String firstName, String lastName, boolean isGuest, ArrayList<Listing> propertiesManaged) {
+    super(id, firstName, lastName, isGuest);
     this.propertiesManaged = propertiesManaged;
   }
 

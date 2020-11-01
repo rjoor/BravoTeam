@@ -130,7 +130,7 @@ public class SystemApplicationUI {
 		String input = scanner.nextLine();
 		System.out.println("What is your password?");
 		String password = scanner.nextLine();
-		System.out.println("Welcome back, "+input);
+		System.out.println("Welcome back, "+ input);
 		return;
 	}
 	
@@ -243,11 +243,11 @@ public class SystemApplicationUI {
 				"\r\n" + 
 				"Subject to the terms and conditions stated below the parties agree as follows:\r\n" + 
 				"\r\n" + 
-				"1. Landloard Tenant Act. This Rental Agreement is governed by the South Carolina Residential Landlord and Tenant Act.\r\n" + 
+				"1. Landlord Tenant Act. This Rental Agreement is governed by the South Carolina Residential Landlord and Tenant Act.\r\n" + 
 				"\r\n" + 
-				"2. Property. Landloard, in consideration of the lease payments provided in this agreement, leases to Tenant a house with " + listing.getNumBeds() + "  bedrooms and " + listing.getNumBaths() + " bathrooms, located at " + listing.getAddress() + ", South Carolina  29201. No other portion of the building wherein the Property is located is included unless expressly provided for in this agreement.\r\n" + 
+				"2. Property. Landlord, in consideration of the lease payments provided in this agreement, leases to Tenant a house with " + listing.getNumBeds() + "  bedrooms and " + listing.getNumBaths() + " bathrooms, located at " + listing.getAddress() + ", South Carolina  29201. No other portion of the building wherein the Property is located is included unless expressly provided for in this agreement.\r\n" + 
 				"\r\n" + 
-				"3. Term. The Tenant will coninue to pay rent from <START DATE> to <END DATE>.\r\n" + 
+				"3. Term. The Tenant will continue to pay rent from <START DATE> to <END DATE>.\r\n" + 
 				"\r\n" + 
 				"4. Rent. The Tenant will pay " + listing.getRentCost() + " each month on the first of the month.\r\n" + 
 				"\r\n" + 

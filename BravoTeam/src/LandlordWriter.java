@@ -35,7 +35,6 @@ public class LandlordWriter extends LandlordConstants {
 		userDetails.put(FIRST_NAME, landlord.getFirstName());
 		userDetails.put(LAST_NAME , landlord.getLastName());
 		userDetails.put(IS_GUEST, landlord.getIsGuest());
-		userDetails.put(RATING, landlord.getRating());
 		userDetails.put(PROPERTIES_MANAGED, landlord.getPropertiesManaged());
 		
 		return userDetails;
