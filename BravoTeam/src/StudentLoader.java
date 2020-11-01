@@ -20,11 +20,11 @@ public class StudentLoader extends StudentConstants {
             String firstName = (String)userJSON.get(STUDENT_FIRST_NAME);
             String lastName = (String)userJSON.get(STUDENT_LAST_NAME);
             boolean isGuest = (boolean)userJSON.get(IS_GUEST);
-            String studentID = (String)userJSON.get(STUDENT_ID);
+            String studentid = (String)userJSON.get(STUDENT_ID);
             boolean isUSCStudent = (boolean)userJSON.get(IS_USC_STUDENT);
             ArrayList<Listing> favoriteListings = (ArrayList<Listing>)userJSON.get(FAVORITE_LISTINGS);
             
-            students.add(new Student(id, firstName, lastName, isGuest, studentID, favoriteListings, isUSCStudent));
+            students.add(new Student(firstName, lastName, isGuest, studentid, favoriteListings, isUSCStudent));
         }
         
         return students;

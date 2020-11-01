@@ -273,6 +273,7 @@ public class SystemApplicationUI {
 				"" + landlord.getFirstName() +"";
 		System.out.println(lease);
 		*/
+		systemInterface.displayLandlord();
 		systemInterface.displayListings();
 		systemInterface.run();
 		//System.out.println(java.util.Arrays.asList(Amenities.values()));

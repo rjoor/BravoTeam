@@ -38,12 +38,12 @@ public class ListingList {
     return listings;
   }
   
-   public void addListing(String address, int numBeds, double numBaths, int squareFootage,
-      ArrayList<String> amenities, int rentCost, boolean utilitiesIncluded, String leaseDuration,
-      boolean canSublet, int distanceFromCampus, boolean isHandicapAccessible, int id, Type type) {
+   public void addListing(String address, Long numBeds, Long numBaths, Long squareFootage,
+      ArrayList<String> amenities, Long rentCost, boolean utilitiesIncluded, String leaseDuration,
+      boolean canSublet, Long distanceFromCampus, boolean isHandicapAccessible, Long id, Type type) {
       listings.add(new Listing(address, numBeds, numBaths, squareFootage,
         amenities, rentCost, utilitiesIncluded, leaseDuration,
-        canSublet, distanceFromCampus, isHandicapAccessible, listings.size(), type));
+        canSublet, distanceFromCampus, isHandicapAccessible));
       ListingWriter.saveListing();
   } 
 }

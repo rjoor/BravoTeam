@@ -7,22 +7,22 @@ import java.util.ArrayList;
 
 public class Listing {
   protected String address;
-  protected int numBeds;
+  protected Long numBeds;
   protected double numBaths;
-  protected int squareFootage;
+  protected Long squareFootage;
   protected ArrayList<String> amenities;
-  protected int rentCost;
+  protected Long rentCost;
   protected boolean utilitiesIncluded;
   protected String leaseDuration;
   protected boolean canSublet;
-  protected int distanceFromCampus;
+  protected Long distanceFromCampus;
   protected boolean isHandicapAccessible;
-  protected int id;
-  protected Type type;
+  protected Long id;
+  //protected Type type;
 
-  public Listing(String address, int numBeds, double numBaths, int squareFootage,
-	      ArrayList<String> amenities, int rentCost, boolean utilitiesIncluded, String leaseDuration,
-	      boolean canSublet, int distanceFromCampus, boolean isHandicapAccessible, int id, Type type) {
+  public Listing(String address, Long numBeds, double numBaths, Long squareFootage,
+	      ArrayList<String> amenities, Long rentCost, boolean utilitiesIncluded, String leaseDuration,
+	      boolean canSublet, Long distanceFromCampus, boolean isHandicapAccessible/*, Type type*/) {
     this.address = address;
     this.numBaths = numBaths;
     this.numBeds = numBeds;
@@ -34,8 +34,7 @@ public class Listing {
     this.canSublet = canSublet;
     this.distanceFromCampus = distanceFromCampus;
     this.isHandicapAccessible = isHandicapAccessible;
-    this.id = id;
-    this.type = type;
+    //this.type = type;
   }
 
   /*
@@ -61,11 +60,11 @@ public class Listing {
   }
 
   /**
-   * Gets the int number of beds of the listing
+   * Gets the Long number of beds of the listing
    * 
    * @return number of beds
    */
-  public int getNumBeds() {
+  public Long getNumBeds() {
     return numBeds;
   }
 
@@ -74,12 +73,12 @@ public class Listing {
    * 
    * @param numBeds is the number of beds in the listing
    */
-  public void setNumBeds(int numBeds) {
+  public void setNumBeds(Long numBeds) {
     this.numBeds = numBeds;
   }
 
   /**
-   * Gets the double number of baths of the listiing
+   * Gets the Long number of baths of the listiing
    * 
    * @return the number of baths
    */
@@ -92,16 +91,16 @@ public class Listing {
    * 
    * @param numBaths the number of baths
    */
-  public void setNumBaths(double numBaths) {
+  public void setNumBaths(Long numBaths) {
     this.numBaths = numBaths;
   }
 
   /**
-   * Gets the int square feet of the listing
+   * Gets the Long square feet of the listing
    * 
    * @return square feet
    */
-  public int getSquareFootage() {
+  public Long getSquareFootage() {
     return squareFootage;
   }
 
@@ -110,7 +109,7 @@ public class Listing {
    * 
    * @param squareFootage of the listing
    */
-  public void setSquareFootage(int squareFootage) {
+  public void setSquareFootage(Long squareFootage) {
     this.squareFootage = squareFootage;
   }
 
@@ -137,7 +136,7 @@ public class Listing {
    * 
    * @return rent cost
    */
-  public int getRentCost() {
+  public Long getRentCost() {
     return rentCost;
   }
 
@@ -146,7 +145,7 @@ public class Listing {
    * 
    * @param rentCost of the listing
    */
-  public void setRentCost(int rentCost) {
+  public void setRentCost(Long rentCost) {
     this.rentCost = rentCost;
   }
 
@@ -209,7 +208,7 @@ public class Listing {
    * 
    * @return the distance from campus
    */
-  public int getDistanceFromCampus() {
+  public Long getDistanceFromCampus() {
     return distanceFromCampus;
   }
 
@@ -218,7 +217,7 @@ public class Listing {
    * 
    * @param distanceFromCampus for the listing
    */
-  public void setDistanceFromCampus(int distanceFromCampus) {
+  public void setDistanceFromCampus(Long distanceFromCampus) {
     this.distanceFromCampus = distanceFromCampus;
   }
   
@@ -227,24 +226,24 @@ public class Listing {
    * 
    * @return type an enum of the type of residence
    */
-  public Type getType() {
-	  return type;
-  }
+  /*
+   * public Type getType() { return type; }
+   */
   
   /**
    * setType sets the value of Type
    * 
    * @param type an enumerated type of residence
    */
-  public void setType(Type type) {
-	  this.type = type;
-  }
+  /*
+   * public void setType(Type type) { this.type = type; }
+   */
   
   /**
    * Used for tester
    * @return string for tester
    */
-  public String printData() {
+  public String prLongData() {
 	  String ret = "address: " +address + ", numBeds: " + numBeds + ", numBaths: " + numBaths + ", squareFootage: " + squareFootage + ", amenities: " + amenities + ", rentCost: " + rentCost + ", utilitiesIncluded: " + utilitiesIncluded + ", leaseDuration: " + leaseDuration + ", canSublet: " + canSublet + ", distanceFromCampus: " + distanceFromCampus + ", isHandicapAccessible: " + isHandicapAccessible;
 	  return ret;
   }
@@ -257,7 +256,7 @@ public class Listing {
     return isHandicapAccessible;
   }
   
-  public int getID() {
+  public Long getID() {
     return id;
   }
 }

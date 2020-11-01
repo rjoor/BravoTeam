@@ -1,8 +1,7 @@
 [
   {
-        "id":1,
-        "address":"200 Apple St",
-        "numBeds": 2,
+    "address":"200 Apple St",
+    "numBeds": 2,
     "numBaths": 2.5,
     "squareFootage": 800,
     "amenities": null,
