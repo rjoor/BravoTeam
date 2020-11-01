@@ -9,12 +9,13 @@ import java.util.ArrayList;
  *
  */
 public class ListingList {
-  private static ListingList listingList;
+  private static ListingList listingList = null;
   ArrayList<Listing> listings = new ArrayList<Listing>();
   //TODO write getters and setters
   //TODO unique identifier class in java. look at and learn
 
-  private ListingList() {}
+  private ListingList() {
+  }
 
   /**
    * getInstance creates the single instance of the arrayList of listings in the Bravo System.
@@ -42,8 +43,8 @@ public class ListingList {
       ArrayList<String> amenities, Long rentCost, boolean utilitiesIncluded, String leaseDuration,
       boolean canSublet, Long distanceFromCampus, boolean isHandicapAccessible, Long id, Type type) {
       listings.add(new Listing(address, numBeds, numBaths, squareFootage,
-        amenities, rentCost, utilitiesIncluded, leaseDuration,
-        canSublet, distanceFromCampus, isHandicapAccessible));
+        amenities, rentCost, utilitiesIncluded, leaseDuration, canSublet, distanceFromCampus, isHandicapAccessible));
+
       ListingWriter.saveListing();
   } 
 }
