@@ -3,6 +3,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 /**
  * 
  * @author Vince Kolb-Lugo
@@ -16,9 +18,9 @@ public class LeaseApplicationWorks {
 	Landlord leaser;
 	Listing residence;
 	String leaseAgreement = "";
-	DateFormat today = new Date();
-	DateFormat start = new Date();
-	DateFormat end = new Date();
+	SimpleDateFormat today = new SimpleDateFormat();
+	SimpleDateFormat start = new SimpleDateFormat();
+	SimpleDateFormat end = new SimpleDateFormat();
 	
 	public void generateLease(Student leasee, Landlord leaser, Listing residence) {
 		try
@@ -38,10 +40,10 @@ public class LeaseApplicationWorks {
 						words[i] = leaser.getFirstName() + " " + leaser.getLastName();
 						leaseAgreement = leaseAgreement.concat(words[i]) + " ";
 					} else if(words[i].equalsIgnoreCase("<NUM_BED>")) {
-						words[i] = residence.numBeds();
+						words[i] = (Integer.toString(residence.getNumBeds()));
 						leaseAgreement = leaseAgreement.concat(words[i]) + " ";
 					} else if(words[i].equalsIgnoreCase("<NUM_BATH>")) {
-						words[i] = residence.numBaths();
+						words[i] = (Double.toString(residence.getNumBaths()));
 						leaseAgreement = leaseAgreement.concat(words[i]) + " ";
 					} else if(words[i].equalsIgnoreCase("<PROPERTY_ADDRESS>")) {
 						words[i] = residence.getAddress();
@@ -56,16 +58,16 @@ public class LeaseApplicationWorks {
 						words[i] = "2020-07-01";
 						leaseAgreement = leaseAgreement.concat(words[i]) + " ";
 					} else if(words[i].equalsIgnoreCase("<RENT>")) {
-						words[i] = residence.getRentCost();
+						words[i] = (Integer.toString(residence.getRentCost()));
 						leaseAgreement = leaseAgreement.concat(words[i]) + " ";
 					} else if(words[i].equalsIgnoreCase("to:<PAYMENT ADDRESS>")) {
 						words[i] = residence.getAddress();
 						leaseAgreement = leaseAgreement.concat(words[i]) + " ";
-					} else if () {
-						words[i] = (String) residence.getRentCost() * 2;
+					} else if (words[i].equalsIgnoreCase("<DAMAGE COST>")) {
+						words[i] = (Integer.toString(residence.getRentCost() * 2));
 						leaseAgreement = leaseAgreement.concat(words[i]) + " ";
 					} else 
-						leaseAgreement = leaseAgreement.concat(words[i])
+						leaseAgreement = leaseAgreement.concat(words[i]);
 				}
 				leaseAgreement = leaseAgreement.concat("\n");
 			}
