@@ -36,11 +36,17 @@ public class SystemApplicationUI {
 		}
 	}
 	
+	public void addListingJSON() {
+		ListingList listings = ListingList.getInstance();
+		listings.addListing("100 Apple", 2, 3, 600, null, 600, false, "12 months", true, 2, false, 1, Type.Apartment);
+	}
+	
 	public void displayListings() {
 		ListingList listings = ListingList.getInstance();
 		ArrayList<Listing> lists = listings.getListing();
 		for (Listing ll : lists) {
 			System.out.println(ll.getAddress());
+			System.out.println(ll.getID());
 		}
 	}
 	
@@ -92,12 +98,18 @@ public class SystemApplicationUI {
 		if (input == 1) {
 			System.out.println("What is your first name?");
 			String name = scanner.nextLine();
+			scanner.hasNextLine();
 			System.out.println("What is your last name?");
 			String lastname = scanner.nextLine();
+			scanner.hasNextLine();
 			System.out.println("What is your username?");
 			String username = scanner.nextLine();
+			scanner.hasNextLine();
 			System.out.println("What is your password?");
+			scanner.hasNextLine();
 			String password = scanner.nextLine();
+			System.out.println();
+			String test = scanner.nextLine();
 			//add to student JSON method
 			System.out.println("Congrats, your account is created!");
 		}
@@ -112,7 +124,11 @@ public class SystemApplicationUI {
 			String username = scanner.nextLine();
 			scanner.hasNextLine();
 			System.out.println("What is your password?");
+			scanner.hasNextLine();
 			String password = scanner.nextLine();
+			System.out.println();
+			String test = scanner.nextLine();
+			//scanner.hasNextLine();
 			//LandlordList landlord = LandlordList.getInstance();
 			//landlord.addLandlord(6, name, lastname, false, 0, null);
 			System.out.println("Congrats, your account is created!");
@@ -149,12 +165,12 @@ public class SystemApplicationUI {
 		int login = scanner.nextInt();
 		if (login == 1) {
 			System.out.println("What is your username?");
-			String username = scanner.nextLine();
-			scanner.hasNext();
+			String user = scanner.nextLine();
+			System.out.println();
+			String test = scanner.nextLine();
 			System.out.println("What is your password?");
 			String password = scanner.nextLine();
-			scanner.hasNext();
-			System.out.println("Welcome back, "+username);
+			System.out.println("Welcome back, "+ user + test);
 		}
 		else if (login == 2) {
 			System.out.println("You must first make an account at the menu.");
@@ -236,43 +252,7 @@ public class SystemApplicationUI {
 		SystemApplicationUI systemInterface = new SystemApplicationUI();
 		//systemInterface.addJSON();
 		//systemInterface.displayLandlord();
-		/*Landlord landlord = new Landlord(1, "John", "Baker", false, 5, null);
-		Student student = new Student(2, "Antonio", "Brown", false, 5, "Five", null, true);
-		Listing listing = new Listing("100 Spring street", 2, 3, 1200, null, 900, false, "12 montsh", true, 2, false, 2, Type.Apartment);
-		String lease = "This Lease Agreement is made and entered on <DATE> by and between " + student.getFirstName() + " " + student.getLastName() + " and <TENANT(s)>.\r\n" + 
-				"\r\n" + 
-				"Subject to the terms and conditions stated below the parties agree as follows:\r\n" + 
-				"\r\n" + 
-				"1. Landlord Tenant Act. This Rental Agreement is governed by the South Carolina Residential Landlord and Tenant Act.\r\n" + 
-				"\r\n" + 
-				"2. Property. Landlord, in consideration of the lease payments provided in this agreement, leases to Tenant a house with " + listing.getNumBeds() + "  bedrooms and " + listing.getNumBaths() + " bathrooms, located at " + listing.getAddress() + ", South Carolina  29201. No other portion of the building wherein the Property is located is included unless expressly provided for in this agreement.\r\n" + 
-				"\r\n" + 
-				"3. Term. The Tenant will continue to pay rent from <START DATE> to <END DATE>.\r\n" + 
-				"\r\n" + 
-				"4. Rent. The Tenant will pay " + listing.getRentCost() + " each month on the first of the month.\r\n" + 
-				"\r\n" + 
-				"5. Payment should be sent to:<PAYMENT ADDRESS>\r\n" + 
-				"\r\n" + 
-				"6. Damages. Charges will be billed to the client for damaged property, up to <DAMAGE COST>.\r\n" + 
-				"\r\n" + 
-				"7. Signatures\r\n" + 
-				"\r\n" + 
-				"\r\n" + 
-				"--------------\r\n" + 
-				"<TENANT 1>\r\n" + 
-				"\r\n" + 
-				"\r\n" + 
-				"\r\n" + 
-				"--------------\r\n" + 
-				"(TENANT X, this will only appear if applicable)\r\n" + 
-				"\r\n" + 
-				"\r\n" + 
-				"\r\n" + 
-				"\r\n" + 
-				"--------------\r\n" + 
-				"" + landlord.getFirstName() +"";
-		System.out.println(lease);
-		*/
+		systemInterface.addListingJSON();
 		systemInterface.displayListings();
 		systemInterface.run();
 		//System.out.println(java.util.Arrays.asList(Amenities.values()));
