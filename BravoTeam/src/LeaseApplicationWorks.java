@@ -6,6 +6,9 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 /**
+ * LeaseApplicationWorks class has instances of a student, landlord, and listing, and 
+ * uses their attributes to fill out a lease application. A template application is
+ * read into the class and a complete application is displayed to the console. 
  * 
  * @author Vince Kolb-Lugo
  * Bravo Team
@@ -22,6 +25,14 @@ public class LeaseApplicationWorks {
 	SimpleDateFormat start = new SimpleDateFormat();
 	SimpleDateFormat end = new SimpleDateFormat();
 	
+	/**
+	 * generateLease method takes in a student, landloard, and listing, and uses their
+	 * attributes to complete the lease agreement.
+	 * 
+	 * @param leasee a student who wants to rent a listings
+	 * @param leaser a landlord who manages the listing
+	 * @param residence a listing of type Listing
+	 */
 	public void generateLease(Student leasee, Landlord leaser, Listing residence) {
 		try
 		{
