@@ -10,13 +10,6 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class ListingLoader extends ListingConstants {
-  
-    public static void main(String[] args) {
-      ArrayList<Listing> listings = loadListing();
-      for(Listing l : listings) {
-        System.out.println(l.id);
-      }
-    }
 
 	public static ArrayList<Listing> loadListing() {
 		ArrayList<Listing> listings = new ArrayList<Listing>();
@@ -29,22 +22,23 @@ public class ListingLoader extends ListingConstants {
 			for(int i = 0; i < listingsJSON.size(); i++)
 			{
 				JSONObject listingJSON = (JSONObject)listingsJSON.get(i);
+				int id = (int)listingJSON.get(ID);
 				String address = (String)listingJSON.get(ADDRESS);
-				Long numBeds = (Long)listingJSON.get(NUM_BEDS);
+				int numBeds = (int)listingJSON.get(NUM_BEDS);
 				double numBaths = (double)listingJSON.get(NUM_BATHS);
-				Long squareFootage = (Long)listingJSON.get(SQUARE_FOOTAGE);
-				ArrayList<String> amenities = (ArrayList<String>)listingJSON.get(AMENITIES);
-				Long rentCost = (Long)listingJSON.get(RENT_COST);
+				int squareFootage = (int)listingJSON.get(SQUARE_FOOTAGE);
+				String amenities = (String)listingJSON.get(AMENITIES);
+				int rentCost = (int)listingJSON.get(RENT_COST);
 				boolean utilitiesIncluded =  (boolean)listingJSON.get(UTILITIES_INCLUDED);
 				String leaseDuration = (String)listingJSON.get(LEASE_DURATION);
 				boolean isCanSublet = (boolean)listingJSON.get(CAN_SUBLET);
-				Long distanceFromCampus = (Long)listingJSON.get(DISTANCE_FROM_CAMPUS);
+				int distanceFromCampus = (int)listingJSON.get(DISTANCE_FROM_CAMPUS);
 				boolean isHandicapAccessible = (boolean)listingJSON.get(IS_HANDICAP_ACCESSIBLE);
-				//Type type = (Type)listingJSON.get(TYPE);
+				Type type = (Type)listingJSON.get(TYPE);
 				
-				listings.add(new Listing(address, numBeds, numBaths, squareFootage, amenities, rentCost, utilitiesIncluded, leaseDuration, isCanSublet, distanceFromCampus, isHandicapAccessible));
+				listings.add(new Listing(address, numBeds, numBaths, squareFootage, amenities, rentCost, utilitiesIncluded, leaseDuration, isCanSublet, distanceFromCampus, isHandicapAccessible, id, type));
 			}
-			System.out.println("x");
+			
 			return listings;
 		}
 		catch (Exception e) {
@@ -55,4 +49,6 @@ public class ListingLoader extends ListingConstants {
 		
 		
 	}
+	
+	
 }

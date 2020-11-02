@@ -13,12 +13,12 @@ import java.util.Date;
  * @author Vince Kolb-Lugo
  * Bravo Team
  * 2020-10-31
- *
+ * 
  */
 public class LeaseApplicationWorks {
 	
-	Student leasee;
-	Landlord leaser;
+	User leasee;
+	User leaser;
 	Listing residence;
 	String leaseAgreement = "";
 	SimpleDateFormat today = new SimpleDateFormat();
@@ -31,11 +31,11 @@ public class LeaseApplicationWorks {
 	 * @param leaser a landlord who manages the listing
 	 * @param residence a listing of type Listing
 	 */
-	public void generateLease(Student leasee, Landlord leaser, Listing residence) {
+	public void generateLease(User leasee, User leaser, Listing residence) {
 		try
 		{
 			//argument references document on local machine. needs to be replaced or edited
-			Scanner fileScanner = new Scanner(new File("C:\\Users\\José\\Desktop\\USC\\Software Engineering\\BravoLocal\\src\\LeaseTemplate.txt"));
+			Scanner fileScanner = new Scanner(new File("src/LeaseTemplate.txt"));
 			while(fileScanner.hasNextLine())
 			{//Reads in a line from text file, splits it into array of strings, 
 				//then parse each word replacing target values. 
@@ -49,7 +49,11 @@ public class LeaseApplicationWorks {
 					} else if(words[i].equalsIgnoreCase("<LANDLOARD>")) {
 						words[i] = leaser.getFirstName() + " " + leaser.getLastName();
 						leaseAgreement += words[i] + " ";
-					} else if(words[i].equalsIgnoreCase("<NUM_BED>")) {
+					}else if(words[i].equalsIgnoreCase("<TENANT(s)>")) {
+						words[i] = leasee.getFirstName() + " " + leasee.getLastName();
+						leaseAgreement += words[i] + " ";
+					}
+					else if(words[i].equalsIgnoreCase("<NUM_BED>")) {
 						words[i] = (Long.toString(residence.getNumBeds()));
 						leaseAgreement += words[i] + " ";
 					} else if(words[i].equalsIgnoreCase("<NUM_BATH>")) {
@@ -70,11 +74,12 @@ public class LeaseApplicationWorks {
 					} else if(words[i].equalsIgnoreCase("<RENT>")) {
 						words[i] = (Long.toString(residence.getRentCost()));
 						leaseAgreement += words[i] + " ";
-					} else if(words[i].equalsIgnoreCase("<PAYMENT_ADDRESS>")) {
+					} else if(words[i].equalsIgnoreCase("<PAYMENT ADDRESS>")) {
 						words[i] = residence.getAddress();
 						leaseAgreement += words[i] + " ";
-					} else if (words[i].equalsIgnoreCase("<DAMAGE_COST>")) {
-						words[i] = (Long.toString(residence.getRentCost() * 2));
+					}
+					else if (words[i].equalsIgnoreCase("<DAMAGE_COST>")) {
+						words[i] = (Long.toString(residence.getRentCost()));
 						leaseAgreement += words[i] + " ";
 					} else if(words[i].equalsIgnoreCase("<TENANT")) {
 						words[i] = leasee.getFirstName() + " " + leasee.getLastName();
@@ -100,22 +105,38 @@ public class LeaseApplicationWorks {
 			
 			//write a completed lease application to a text file and save it in local directory
 			//needs to be edited
-			FileWriter writer = new FileWriter("C:\\Users\\José\\Desktop\\USC\\Software Engineering\\BravoLocal\\src\\LeaseCompleted.txt");
+			FileWriter writer = new FileWriter("src\\LeaseCompleted.txt");
 			writer.write(leaseAgreement);
 			writer.close();
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
 	}
-/*Used for testing purposes
+	
+	public String toString(String ret) {
+		return ret;
+	}
+	
+	/*public void run() {
+		User student = new Student(1, "Steve", "Jobs", false, "0584", null, true);
+		//Landlord landloard = new Landlord(2, "Dan", "The Man", false, 2, null);
+		User landlord = new Landlord(2, "George", "Castanza", false, null);
+		Listing listing = new Listing("100 Here St", 3, 3, 3, null, 666, true, "13 months", false, 1, true, 1, Type.Apartment);
+		String leaseText ="";
+		generateLease(student, landlord, listing);
+	}
+	
+//Used for testing purposes
 	public static void main(String[] args) {
-		Student student = new Student(1, "Steve", "Jobs", false, 2, null, null, true);
-		Landlord landloard = new Landlord(2, "Dan", "The Man", false, 2, null);
+		User student = new Student(1, "Steve", "Jobs", false, "0584", null, true);
+		//Landlord landloard = new Landlord(2, "Dan", "The Man", false, 2, null);
+		User landlord = new Landlord(2, "George", "Castanza", false, null);
 		Listing listing = new Listing("100 Here St", 3, 3, 3, null, 666, true, "13 months", false, 1, true, 1, Type.Apartment);
 		String leaseText ="";
 		
-		generateLease(student, landlord, listing);
 
-	}
-*/
+		LeaseApplicationWorks tester = new LeaseApplicationWorks();
+		tester.run();
+	}*/
+
 }

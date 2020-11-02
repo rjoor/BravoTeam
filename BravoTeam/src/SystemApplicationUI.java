@@ -1,4 +1,10 @@
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ArrayList;
 /**
  * 
@@ -6,6 +12,7 @@ import java.util.ArrayList;
  *
  */
 public class SystemApplicationUI {
+	SimpleDateFormat today = new SimpleDateFormat();
 	private static final String WELCOME_MESSAGE = "Welcome to the online USC housing search!";
 	private String[] mainMenuOptions = {"Create an Account", "Log In", "Search for Homes", "Post a listing", "Log Out"};
 	private Scanner scanner;
@@ -38,15 +45,37 @@ public class SystemApplicationUI {
 	
 	public void addListingJSON() {
 		ListingList listings = ListingList.getInstance();
-		listings.addListing("100 Apple", 2, 3, 600, null, 600, false, "12 months", true, 2, false, 1, Type.Apartment);
+		listings.addListing("100 Apple Street", 2, 3, 600, "pool, pet friendly", 600, false, "12 months", true, 2, false, 1, Type.Apartment);
+		listings.addListing("205 Brick Street", 2, 2.5, 800, "gym, pool, pet friendly", 1000, false, "12 months", true, 1, false, 2, Type.Duplex);
+		listings.addListing("20 Walk2Campus Ave", 1, 1, 700, "pool, gym, free wifi, pet friendly, washer and dryer", 650, false, "12 months", true, 2, false, 3, Type.Apartment);
+		listings.addListing("5 Apple Street", 3, 3, 1200, "free wifi", 800, false, "12 months", true, 2, false, 4, Type.Apartment);
+		listings.addListing("103 Marion Street", 2, 2, 650, "free wifi, furnished, pool, gym, movie theater", 700, false, "12 months", true, 3, false, 5, Type.House);
+		listings.addListing("25 South Lane", 2, 1, 500, "pool", 500, false, "12 months", true, 1, false, 6, Type.Apartment);
+		listings.addListing("100 North Street", 4, 4, 700, "washer and dryer, fridge", 500, false, "12 months", true, 2, false, 7, Type.Apartment);
+		//listings.addListing("5 LiveSC", 1, 1, 800, "gym, pool, free wifi, furnished, pet friendly", 500, false, "12 months", true, 2, false, 8, Type.Apartment);
+		//listings.addListing("5 LiveSC", 2, 1, 700, "gym, pool, free wifi, furnished, pet friendly", 500, false, "12 months", true, 2, false, 9, Type.Apartment);
+		//listings.addListing("5 LiveSC", 2, 2, 650, "gym, pool, free wifi, furnished, pet friendly", 500, false, "12 months", true, 2, false, 10, Type.Apartment);
 	}
-	
+	public void addListingsJSON() {
+		ListingList listings = ListingList.getInstance();
+		listings.addListing("100 Apple Street", 2, 3, 600, "pool, pet friendly", 600, false, "12 months", true, 2, false, 1, Type.Apartment);
+		listings.addListing("205 Brick Street", 2, 2.5, 800, "gym, pool, pet friendly", 1000, false, "12 months", true, 1, false, 2, Type.Duplex);
+		listings.addListing("20 Walk2Campus Ave", 1, 1, 700, "gym, free wifi, pet friendly, washer and dryer", 650, false, "12 months", true, 2, false, 3, Type.Apartment);
+		listings.addListing("5 Apple Street", 3, 3, 1200, "free wifi", 800, false, "12 months", true, 2, false, 4, Type.Apartment);
+		listings.addListing("103 Marion Street", 2, 2, 650, "free wifi, furnished, pool, gym, movie theater", 700, false, "12 months", true, 3, false, 5, Type.House);
+		listings.addListing("25 South Lane", 2, 1, 500, "pool", 500, false, "12 months", true, 1, false, 6, Type.Apartment);
+		listings.addListing("100 North Street", 4, 4, 700, "washer and dryer, fridge", 500, false, "12 months", true, 2, false, 7, Type.Apartment);
+		listings.addListing("5 LiveSC", 1, 1, 800, "gym, pool, free wifi, furnished, pet friendly", 500, false, "12 months", true, 2, false, 8, Type.Apartment);
+		listings.addListing("5 LiveSC", 2, 1, 700, "gym, pool, free wifi, furnished, pet friendly", 500, false, "12 months", true, 2, false, 9, Type.Apartment);
+		listings.addListing("5 LiveSC", 2, 2, 650, "gym, pool, free wifi, furnished, pet friendly", 500, false, "12 months", true, 2, false, 10, Type.Apartment);
+	}
+	 
 	public void displayListings() {
 		ListingList listings = ListingList.getInstance();
 		ArrayList<Listing> lists = listings.getListing();
 		for (Listing ll : lists) {
-			System.out.println(ll.getAddress());
-			System.out.println(ll.getID());
+			System.out.println("\nName and Address: " +  ll.getAddress() +", ID: " + ll.getID() + ", Number of Beds: " + ll.getNumBeds() + ", Number of Baths: "+ ll.getNumBaths() + ", Monthly Cost: " + ll.getRentCost() +  ", Distance to campus to the closest mile: " + ll.distanceFromCampus + "\nAmenities: " +ll.getAmenities()  +"\n");
+			System.out.println("------------------");
 		}
 	}
 	
@@ -59,8 +88,8 @@ public class SystemApplicationUI {
 			int usercommand = userCommand(mainMenuOptions.length - 1);
 			
 			if (usercommand == -1) {
-				System.out.println("Not a valid command.");
-				continue;
+				System.out.println("Goodbye");
+				break;
 			}
 			
 			//If the user chooses the last option, log out
@@ -110,7 +139,9 @@ public class SystemApplicationUI {
 			String password = scanner.nextLine();
 			System.out.println();
 			String test = scanner.nextLine();
+			User student = new Student(1, name, lastname, true, "0654", null, true);
 			//add to student JSON method
+			addListingsJSON();
 			System.out.println("Congrats, your account is created!");
 		}
 		else if (input == 2) {
@@ -144,59 +175,89 @@ public class SystemApplicationUI {
 	private void logIn() {
 		System.out.println("What is your username?");
 		String input = scanner.nextLine();
+		System.out.println();
+		String test = scanner.nextLine();
 		System.out.println("What is your password?");
 		String password = scanner.nextLine();
-		System.out.println("Welcome back, "+ input);
+		System.out.println("Welcome back, "+ input + test);
+		addListingsJSON();
 		return;
 	}
 	
 	private void searchHomes() {
 		System.out.println("\nWhat type of housing are you looking for? \n1. House\n2. Apartment \n3. Townhouse \n4. Duplex");
 		String home = scanner.nextLine();
+		System.out.println();
+		String test2 = scanner.nextLine();
+		displayListings();
 		// List out listing JSON
 		System.out.println("\nSelect the id of the listing you desire");
 		int id = scanner.nextInt();
 		System.out.println("Would you like to live with another registered user? \n1. Yes \n2. No");
-		int input = scanner.nextInt();
-		if (input == 1) {
+		int input1 = scanner.nextInt();
+		if (input1 == 1) {
 			System.out.println("What is their username?");
+			String iser = scanner.nextLine();
+			scanner.hasNextLine();
+			System.out.println();
+			String test = scanner.nextLine();
 		}
 		System.out.println("Do you have an account? \n1. Yes \n2. No");
 		int login = scanner.nextInt();
-		if (login == 1) {
-			System.out.println("What is your username?");
-			String user = scanner.nextLine();
-			System.out.println();
-			String test = scanner.nextLine();
-			System.out.println("What is your password?");
-			String password = scanner.nextLine();
-			System.out.println("Welcome back, "+ user + test);
-		}
-		else if (login == 2) {
-			System.out.println("You must first make an account at the menu.");
+		if (login == 2) {
+			System.out.println("You must make an account in order to sign a lease");
 			return;
+			//scanner.hasNextLine();
+			//User student = new Student(1, name, lastname, true, "0654", null, true);
 		}
-		else {
-			System.out.println("Invalid command");
-			return;
+		System.out.println("What is your username?");
+		String user = scanner.nextLine();
+		System.out.println();
+		String test = scanner.nextLine();
+		System.out.println("What is your password?");
+		String password = scanner.nextLine();
+		System.out.println("Welcome back, "+ user + test);
+		System.out.println("Verify your first name");
+		String name = scanner.nextLine();
+		System.out.println("Verify your last name");
+		String lastname = scanner.nextLine();
+		ListingList listings = ListingList.getInstance();
+		ArrayList<Listing> lists = listings.getListing();
+		for (Listing ll : lists) {
+			if (ll.getID() == id) {
+				Listing listing = new Listing(ll.getAddress(), ll.getNumBeds(), ll.getNumBaths(), ll.getSquareFootage(), ll.getAmenities(), ll.getRentCost(), ll.isUtilitiesIncluded(), ll.getLeaseDuration(), ll.canSublet, ll.distanceFromCampus, ll.isHandicapAccessible, ll.getID(), ll.getType());
+				LeaseApplicationWorks lease = new LeaseApplicationWorks();
+				User student = new Student(1, name, lastname, true, "0654", null, true);
+				//User student = new Student(1, "Steve", "Jobs", false, "0584", null, true);
+				User landlord = new Landlord(2, "George", "Castanza", false, null);
+				lease.generateLease(student, landlord, listing);
+			}
 		}
 		// Code to generate and fill in lease agreement
-		System.out.println("Congratulations on your new home!");
+		LeaseApplicationWorks lease = new LeaseApplicationWorks();
+		System.out.println("Congratulations on your new home, " + name + "!");
 	}
 	
 	/**
-	 * Post Listing Funciton for UI
+	 * Post Listing Function for UI
 	 */
 	private void postListing() {
 		//TODO Add More logic
 		System.out.println("Are you a registered property manager? \n1. Yes\n2. No");
-		String input = scanner.nextLine();
-		if (input.equalsIgnoreCase("2")) {
+		int input = scanner.nextInt();
+		if (input== 2) {
 			System.out.println("Sorry, you must be a property manager to post a listing");
+			return;
 		}
-		if (input.equalsIgnoreCase("1")) {
+		logIn();
 			System.out.println("What type of property is the listing?");
 			String listingType = scanner.nextLine();
+			System.out.println();
+			String test = scanner.nextLine();
+			System.out.println("What is the name of the complex?");
+			String name = scanner.nextLine();
+			System.out.println("What is the unit's address?");
+			String address = scanner.nextLine();
 			System.out.println("How many beds in the unit?");
 			int numBed = scanner.nextInt();
 			System.out.println("How many baths in the unit?");
@@ -209,19 +270,28 @@ public class SystemApplicationUI {
 			scanner.hasNext();
 			String utilities = scanner.nextLine();
 			System.out.println("How long does the lease last?");
-			scanner.hasNext();
 			String length = scanner.nextLine();
+			System.out.println();
+			String test2 = scanner.nextLine();
 			System.out.println("Can the leasee sublet the lease?");
 			String sublet = scanner.nextLine();
-			scanner.hasNext();
 			System.out.println("What is the distance from campus, to the nearest mile?");
 			int distance = scanner.nextInt();
 			System.out.println("Enter all the amenities included, seperated by a comma");
-			scanner.hasNext();
 			String amenities = scanner.nextLine();
+			System.out.println();
+			String test3 = scanner.nextLine();
+			System.out.println("How many units are available?");
+			int units = scanner.nextInt();
 			//TODO Add the new listing
-			//System.out.println("Congrats, your listing was successfully added!");
-		}
+			addListingsJSON();
+			System.out.println("Congrats, your listing was successfully added! Would you like to see it? 1.Y or 2.N");
+			int inp = scanner.nextInt();
+			if (inp == 2) {
+				return;
+			}
+			displayListings();
+		
 	}
 	
 	
@@ -237,8 +307,8 @@ public class SystemApplicationUI {
 	private int userCommand(int numCommands) {
 		System.out.print("What would you like to currently do?: ");
 		
-		String input = scanner.nextLine();
-		int command = Integer.parseInt(input) - 1;
+		int input = scanner.nextInt();
+		int command = input - 1;
 		
 		if(command >= 0 && command <= numCommands - 1) 
 			return command;
@@ -252,9 +322,10 @@ public class SystemApplicationUI {
 		SystemApplicationUI systemInterface = new SystemApplicationUI();
 		//systemInterface.addJSON();
 		//systemInterface.displayLandlord();
-		systemInterface.displayListings();
+		systemInterface.addListingJSON();
+		//systemInterface.displayListings();
 		systemInterface.run();
 		//System.out.println(java.util.Arrays.asList(Amenities.values()));
 		
 	}
-}
+} 

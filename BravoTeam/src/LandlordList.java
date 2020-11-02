@@ -18,7 +18,7 @@ public class LandlordList {
   }
   
   public void addLandlord(int id, String firstName, String lastName, boolean isGuest, int rating, ArrayList<Listing> propertiesManaged) {
-	  landlords.add(new Landlord(firstName, lastName, isGuest, propertiesManaged));
+	  landlords.add(new Landlord(id, firstName, lastName, isGuest, propertiesManaged));
 	  LandlordWriter.saveLandlord();
   }
 }

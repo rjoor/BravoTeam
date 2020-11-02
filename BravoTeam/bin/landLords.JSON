@@ -1,1 +1,5 @@
+<<<<<<< HEAD
+[{"firstName":"Antonio","lastName":"Brown","isGuest":true,"propertiesManaged":null},{"firstName":"Bobby","lastName":"Brown","isGuest":true,"propertiesManaged":null}]
+=======
 [{"firstName":"George","lastName":"Bush","isGuest":true,"propertiesManaged":null}]
+>>>>>>> branch 'main' of https://github.com/rjoor/BravoTeam.git

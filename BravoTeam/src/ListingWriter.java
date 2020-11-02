@@ -1,5 +1,7 @@
 /**
  * 
+ /**
+ * 
  * @author ridgetj Bravo Team 10/25/20
  *
  */
@@ -45,7 +47,7 @@ public static JSONObject getListingJSON(Listing listing) {
 		listingDetails.put(CAN_SUBLET, listing.isCanSublet());	
 		listingDetails.put(DISTANCE_FROM_CAMPUS, listing.getDistanceFromCampus());	
 		listingDetails.put(IS_HANDICAP_ACCESSIBLE, listing.getIsHandicapAccessible());	
-		//listingDetails.put(TYPE, listing.getType());	
+		listingDetails.put(TYPE, listing.getType());	
 		
 		return listingDetails;
 	}

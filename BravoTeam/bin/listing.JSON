@@ -1,16 +1,1 @@
-[
-  {
-    "address":"200 Apple St",
-    "numBeds": 2,
-    "numBaths": 2.5,
-    "squareFootage": 800,
-    "amenities": null,
-    "rentCost": 800,
-    "utilitiesIncluded": true,
-    "leaseDuration": "12 months",
-    "canSublet": false,
-    "distanceFromCampus": 3,
-    "isHandicapAccessible": true,
-    "type": "Apartment"
-   },{}
-]
+[{"amenities":"pool, pet friendly","utilitiesIncluded":false,"address":"100 Apple Street","isHandicapAccessible":false,"distanceFromCampus":2,"numBeds":2,"type":Apartment,"leaseDuration":"12 months","numBaths":3.0,"squareFootage":600,"rentCost":600,"id":1,"canSublet":true},{"amenities":"gym, pool, pet friendly","utilitiesIncluded":false,"address":"205 Brick Street","isHandicapAccessible":false,"distanceFromCampus":1,"numBeds":2,"type":Duplex,"leaseDuration":"12 months","numBaths":2.5,"squareFootage":800,"rentCost":1000,"id":2,"canSublet":true},{"amenities":"pool, gym, free wifi, pet friendly, washer and dryer","utilitiesIncluded":false,"address":"20 Walk2Campus Ave","isHandicapAccessible":false,"distanceFromCampus":2,"numBeds":1,"type":Apartment,"leaseDuration":"12 months","numBaths":1.0,"squareFootage":700,"rentCost":650,"id":3,"canSublet":true},{"amenities":"free wifi","utilitiesIncluded":false,"address":"5 Apple Street","isHandicapAccessible":false,"distanceFromCampus":2,"numBeds":3,"type":Apartment,"leaseDuration":"12 months","numBaths":3.0,"squareFootage":1200,"rentCost":800,"id":4,"canSublet":true},{"amenities":"free wifi, furnished, pool, gym, movie theater","utilitiesIncluded":false,"address":"103 Marion Street","isHandicapAccessible":false,"distanceFromCampus":3,"numBeds":2,"type":House,"leaseDuration":"12 months","numBaths":2.0,"squareFootage":650,"rentCost":700,"id":5,"canSublet":true},{"amenities":"pool","utilitiesIncluded":false,"address":"25 South Lane","isHandicapAccessible":false,"distanceFromCampus":1,"numBeds":2,"type":Apartment,"leaseDuration":"12 months","numBaths":1.0,"squareFootage":500,"rentCost":500,"id":6,"canSublet":true},{"amenities":"washer and dryer, fridge","utilitiesIncluded":false,"address":"100 North Street","isHandicapAccessible":false,"distanceFromCampus":2,"numBeds":4,"type":Apartment,"leaseDuration":"12 months","numBaths":4.0,"squareFootage":700,"rentCost":500,"id":7,"canSublet":true}]

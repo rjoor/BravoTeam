@@ -13,16 +13,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class LandlordLoader extends LandlordConstants {
-  
-    public static void main(String[] args) {
-      ArrayList<Landlord> landlords = loadLandlord();
-      for(Landlord l : landlords) {
-        System.out.println(l.firstName);
-      }
-    }
-  
-	public static ArrayList<Landlord> loadLandlord() {
-		ArrayList<Landlord> landlords = new ArrayList<Landlord>();
+	public static ArrayList<User> loadLandlord() {
+		ArrayList<User> landlords = new ArrayList<User>();
 		
 		try {
 			FileReader reader = new FileReader(LANDLORD_FILE_NAME);
@@ -32,16 +24,15 @@ public class LandlordLoader extends LandlordConstants {
 			for(int i = 0; i < landlordJSON.size(); i++)
 			{
 				JSONObject userJSON = (JSONObject)landlordJSON.get(i);
-				//int id = (int)userJSON.get(ID);
+				int id = (int)userJSON.get(ID);
 				String firstName = (String)userJSON.get(FIRST_NAME);
 				String lastName = (String)userJSON.get(LAST_NAME);
 				boolean isGuest = (boolean)userJSON.get(IS_GUEST);
 				ArrayList<Listing> propertiesManaged = (ArrayList<Listing>)userJSON.get(PROPERTIES_MANAGED);
 				
-				landlords.add(new Landlord(firstName, lastName, isGuest, propertiesManaged));
+				landlords.add(new Landlord(id, firstName, lastName, isGuest, propertiesManaged));
 			}
 			
-			System.out.println("x");
 			return landlords;
 		}
 		catch (Exception e) {
