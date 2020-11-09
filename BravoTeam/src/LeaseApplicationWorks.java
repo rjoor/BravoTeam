@@ -105,7 +105,7 @@ public class LeaseApplicationWorks {
 			
 			//write a completed lease application to a text file and save it in local directory
 			//needs to be edited
-			FileWriter writer = new FileWriter("src\\LeaseCompleted.txt");
+			FileWriter writer = new FileWriter("src/LeaseCompleted.txt");
 			writer.write(leaseAgreement);
 			writer.close();
 		} catch(IOException e) {

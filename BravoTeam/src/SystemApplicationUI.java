@@ -43,32 +43,6 @@ public class SystemApplicationUI {
 		}
 	}
 	
-	public void addListingJSON() {
-		ListingList listings = ListingList.getInstance();
-		listings.addListing("100 Apple Street", 2, 3, 600, "pool, pet friendly", 600, false, "12 months", true, 2, false, 1, Type.Apartment);
-		listings.addListing("205 Brick Street", 2, 2.5, 800, "gym, pool, pet friendly", 1000, false, "12 months", true, 1, false, 2, Type.Duplex);
-		listings.addListing("20 Walk2Campus Ave", 1, 1, 700, "pool, gym, free wifi, pet friendly, washer and dryer", 650, false, "12 months", true, 2, false, 3, Type.Apartment);
-		listings.addListing("5 Apple Street", 3, 3, 1200, "free wifi", 800, false, "12 months", true, 2, false, 4, Type.Apartment);
-		listings.addListing("103 Marion Street", 2, 2, 650, "free wifi, furnished, pool, gym, movie theater", 700, false, "12 months", true, 3, false, 5, Type.House);
-		listings.addListing("25 South Lane", 2, 1, 500, "pool", 500, false, "12 months", true, 1, false, 6, Type.Apartment);
-		listings.addListing("100 North Street", 4, 4, 700, "washer and dryer, fridge", 500, false, "12 months", true, 2, false, 7, Type.Apartment);
-		//listings.addListing("5 LiveSC", 1, 1, 800, "gym, pool, free wifi, furnished, pet friendly", 500, false, "12 months", true, 2, false, 8, Type.Apartment);
-		//listings.addListing("5 LiveSC", 2, 1, 700, "gym, pool, free wifi, furnished, pet friendly", 500, false, "12 months", true, 2, false, 9, Type.Apartment);
-		//listings.addListing("5 LiveSC", 2, 2, 650, "gym, pool, free wifi, furnished, pet friendly", 500, false, "12 months", true, 2, false, 10, Type.Apartment);
-	}
-	public void addListingsJSON() {
-		ListingList listings = ListingList.getInstance();
-		listings.addListing("100 Apple Street", 2, 3, 600, "pool, pet friendly", 600, false, "12 months", true, 2, false, 1, Type.Apartment);
-		listings.addListing("205 Brick Street", 2, 2.5, 800, "gym, pool, pet friendly", 1000, false, "12 months", true, 1, false, 2, Type.Duplex);
-		listings.addListing("20 Walk2Campus Ave", 1, 1, 700, "gym, free wifi, pet friendly, washer and dryer", 650, false, "12 months", true, 2, false, 3, Type.Apartment);
-		listings.addListing("5 Apple Street", 3, 3, 1200, "free wifi", 800, false, "12 months", true, 2, false, 4, Type.Apartment);
-		listings.addListing("103 Marion Street", 2, 2, 650, "free wifi, furnished, pool, gym, movie theater", 700, false, "12 months", true, 3, false, 5, Type.House);
-		listings.addListing("25 South Lane", 2, 1, 500, "pool", 500, false, "12 months", true, 1, false, 6, Type.Apartment);
-		listings.addListing("100 North Street", 4, 4, 700, "washer and dryer, fridge", 500, false, "12 months", true, 2, false, 7, Type.Apartment);
-		listings.addListing("5 LiveSC", 1, 1, 800, "gym, pool, free wifi, furnished, pet friendly", 500, false, "12 months", true, 2, false, 8, Type.Apartment);
-		listings.addListing("5 LiveSC", 2, 1, 700, "gym, pool, free wifi, furnished, pet friendly", 500, false, "12 months", true, 2, false, 9, Type.Apartment);
-		listings.addListing("5 LiveSC", 2, 2, 650, "gym, pool, free wifi, furnished, pet friendly", 500, false, "12 months", true, 2, false, 10, Type.Apartment);
-	}
 	 
 	public void displayListings() {
 		ListingList listings = ListingList.getInstance();
@@ -77,6 +51,16 @@ public class SystemApplicationUI {
 			System.out.println("\nName and Address: " +  ll.getAddress() +", ID: " + ll.getID() + ", Number of Beds: " + ll.getNumBeds() + ", Number of Baths: "+ ll.getNumBaths() + ", Monthly Cost: " + ll.getRentCost() +  ", Distance to campus to the closest mile: " + ll.distanceFromCampus + "\nAmenities: " +ll.getAmenities()  +"\n");
 			System.out.println("------------------");
 		}
+	}
+	
+	public void add() {
+		AddJSON json = new AddJSON();
+		json.addListingsJSON();
+	}
+	
+	public void display() {
+		DisplayListingJSON json = new DisplayListingJSON();
+		json.displayListings();
 	}
 	
 	public void run() {
@@ -122,7 +106,7 @@ public class SystemApplicationUI {
 	}
 	
 	private void createAccount() {
-		System.out.println("Are you a student or pproperty manager? \n1. Student \n2. Property Manager");
+		System.out.println("Are you a student or property manager? \n1. Student \n2. Property Manager");
 		int input = scanner.nextInt();
 		if (input == 1) {
 			System.out.println("What is your first name?");
@@ -141,7 +125,6 @@ public class SystemApplicationUI {
 			String test = scanner.nextLine();
 			User student = new Student(1, name, lastname, true, "0654", null, true);
 			//add to student JSON method
-			addListingsJSON();
 			System.out.println("Congrats, your account is created!");
 		}
 		else if (input == 2) {
@@ -180,7 +163,6 @@ public class SystemApplicationUI {
 		System.out.println("What is your password?");
 		String password = scanner.nextLine();
 		System.out.println("Welcome back, "+ input + test);
-		addListingsJSON();
 		return;
 	}
 	
@@ -189,7 +171,7 @@ public class SystemApplicationUI {
 		String home = scanner.nextLine();
 		System.out.println();
 		String test2 = scanner.nextLine();
-		displayListings();
+		display();
 		// List out listing JSON
 		System.out.println("\nSelect the id of the listing you desire");
 		int id = scanner.nextInt();
@@ -284,7 +266,6 @@ public class SystemApplicationUI {
 			System.out.println("How many units are available?");
 			int units = scanner.nextInt();
 			//TODO Add the new listing
-			addListingsJSON();
 			System.out.println("Congrats, your listing was successfully added! Would you like to see it? 1.Y or 2.N");
 			int inp = scanner.nextInt();
 			if (inp == 2) {
@@ -322,7 +303,8 @@ public class SystemApplicationUI {
 		SystemApplicationUI systemInterface = new SystemApplicationUI();
 		//systemInterface.addJSON();
 		//systemInterface.displayLandlord();
-		systemInterface.addListingJSON();
+		//systemInterface.addListingJSON();
+		systemInterface.add();
 		//systemInterface.displayListings();
 		systemInterface.run();
 		//System.out.println(java.util.Arrays.asList(Amenities.values()));
