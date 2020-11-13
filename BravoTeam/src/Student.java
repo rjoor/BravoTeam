@@ -42,4 +42,12 @@ public class Student extends User {
       return false;
     }
   }
+  
+  public String getFavorites() {
+	  String favs = "";
+	  for(Listing listing : this.favoritesListings) {
+		  favs += listing.toString();
+	  }
+	  return favs;
+  }
 }
