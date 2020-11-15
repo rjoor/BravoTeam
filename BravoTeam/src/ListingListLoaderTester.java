@@ -27,7 +27,7 @@ public class ListingListLoaderTester {
   }
   
   @Test
-  void landlordArraySizeTest() {
+  void listingArraySizeTest() {
     listing = ListingLoader.loadListing();
     assertEquals(2, listing.size());
   }
