@@ -31,7 +31,7 @@ public class LandlordWriter extends LandlordConstants {
 	
 	public static JSONObject getLandlordJSON(Landlord landlord) {
 		JSONObject userDetails = new JSONObject();
-		//userDetails.put(ID, landlord.getID());
+		userDetails.put(ID, landlord.getID());
 		userDetails.put(FIRST_NAME, landlord.getFirstName());
 		userDetails.put(LAST_NAME , landlord.getLastName());
 		userDetails.put(IS_GUEST, landlord.getIsGuest());

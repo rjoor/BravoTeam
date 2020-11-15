@@ -13,8 +13,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class LandlordLoader extends LandlordConstants {
-	public static ArrayList<User> loadLandlord() {
-		ArrayList<User> landlords = new ArrayList<User>();
+	public static ArrayList<Landlord> loadLandlord() {
+		ArrayList<Landlord> landlords = new ArrayList<Landlord>();
 		
 		try {
 			FileReader reader = new FileReader(LANDLORD_FILE_NAME);

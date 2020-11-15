@@ -21,7 +21,7 @@ public class User {
    * 
    * @return the integer value of the id
    */
-  public int getId() {
+  public int getID() {
 	  return id;
   }
   
